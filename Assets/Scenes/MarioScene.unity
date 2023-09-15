@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 231481338}
   m_Layer: 0
   m_Name: Pipe-Head
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 338399089}
   m_Layer: 0
   m_Name: Pipe-Body-2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -819,12 +819,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1878195554}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!45 &519420033
 Skybox:
@@ -848,7 +848,7 @@ GameObject:
   - component: {fileID: 556054963}
   m_Layer: 0
   m_Name: Question-Box
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -861,12 +861,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 556054961}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 9, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1159193141}
+  m_Father: {fileID: 592209374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &556054963
 BoxCollider2D:
@@ -965,6 +965,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &592209373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 592209374}
+  m_Layer: 0
+  m_Name: Blocks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &592209374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592209373}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 656645635}
+  - {fileID: 995287635}
+  - {fileID: 769522559}
+  - {fileID: 556054962}
+  - {fileID: 1532556973}
+  - {fileID: 1043662211}
+  - {fileID: 1407972313}
+  m_Father: {fileID: 1159193141}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &600724070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,7 +1221,7 @@ GameObject:
   - component: {fileID: 656645636}
   m_Layer: 0
   m_Name: Bricks
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1196,12 +1234,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 656645634}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 12, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1159193141}
+  m_Father: {fileID: 592209374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &656645636
 BoxCollider2D:
@@ -1462,7 +1500,7 @@ GameObject:
   - component: {fileID: 769522560}
   m_Layer: 0
   m_Name: Bricks-3
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1475,12 +1513,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769522558}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 16, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1159193141}
+  m_Father: {fileID: 592209374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &769522560
 BoxCollider2D:
@@ -1592,7 +1630,7 @@ GameObject:
   - component: {fileID: 885650545}
   m_Layer: 0
   m_Name: Pipe-Head
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1840,7 +1878,7 @@ GameObject:
   - component: {fileID: 995287636}
   m_Layer: 0
   m_Name: Bricks-2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1853,12 +1891,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 995287634}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 14, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1159193141}
+  m_Father: {fileID: 592209374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &995287636
 BoxCollider2D:
@@ -1970,7 +2008,7 @@ GameObject:
   - component: {fileID: 1043662212}
   m_Layer: 0
   m_Name: Question-Box-3
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1983,12 +2021,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043662210}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 15, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1159193141}
+  m_Father: {fileID: 592209374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1043662212
 BoxCollider2D:
@@ -2166,7 +2204,7 @@ GameObject:
   - component: {fileID: 1159193141}
   m_Layer: 0
   m_Name: Obstacles
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2184,13 +2222,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 656645635}
-  - {fileID: 995287635}
-  - {fileID: 769522559}
-  - {fileID: 556054962}
-  - {fileID: 1532556973}
-  - {fileID: 1043662211}
-  - {fileID: 1407972313}
+  - {fileID: 1825429135}
+  - {fileID: 592209374}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1192192614
@@ -2406,7 +2439,7 @@ GameObject:
   - component: {fileID: 1369864060}
   m_Layer: 0
   m_Name: Pipe-Head
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2640,7 +2673,7 @@ GameObject:
   - component: {fileID: 1407972314}
   m_Layer: 0
   m_Name: Question-Box-4
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2653,12 +2686,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1407972312}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 14, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1159193141}
+  m_Father: {fileID: 592209374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1407972314
 BoxCollider2D:
@@ -2895,7 +2928,7 @@ GameObject:
   - component: {fileID: 1532556974}
   m_Layer: 0
   m_Name: Question-Box-2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2908,12 +2941,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532556972}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 13, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1159193141}
+  m_Father: {fileID: 592209374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1532556974
 BoxCollider2D:
@@ -3334,15 +3367,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825429134}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.070633456, y: 0, z: -0.08836643}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 669539349}
   - {fileID: 716671918}
   - {fileID: 909258207}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1159193141}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1842367661
 GameObject:
@@ -3388,7 +3421,7 @@ GameObject:
   - component: {fileID: 1863849836}
   m_Layer: 0
   m_Name: Pipe-Body
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3590,7 +3623,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -5.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 519420032}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1878195555
@@ -4011,7 +4045,7 @@ GameObject:
   - component: {fileID: 2116719756}
   m_Layer: 0
   m_Name: Pipe-Body
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4108,11 +4142,9 @@ BoxCollider:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 519420032}
   - {fileID: 1878195554}
   - {fileID: 1379689118}
   - {fileID: 600724071}
   - {fileID: 1192192615}
   - {fileID: 1159193141}
-  - {fileID: 1825429135}
   - {fileID: 1155844062}

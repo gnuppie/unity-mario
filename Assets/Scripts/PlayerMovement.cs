@@ -114,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
     private void ResetGame()
     {
         // reset position
-        marioBody.transform.position = new Vector3(0.0f, -0.64f, 0.0f);
+        marioBody.transform.position = new Vector3(0.0f, -5.4f, 0.0f);
         // reset sprite direction
         faceRightState = true;
         marioSprite.flipX = false;
