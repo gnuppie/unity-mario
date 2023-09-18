@@ -41,6 +41,9 @@ public class PlayerMovement : MonoBehaviour
     [System.NonSerialized]
     public bool alive = true;
 
+    public Transform gameCamera;
+
+
     void PlayJumpSound()
     {
         // play jump sound
@@ -174,6 +177,8 @@ public class PlayerMovement : MonoBehaviour
     {
         // reset position
         marioBody.transform.position = new Vector3(0.0f, -5.4f, 0.0f);
+        // reset camera position
+        gameCamera.position = new Vector3(0, -2, -10);
         // reset sprite direction
         faceRightState = true;
         marioSprite.flipX = false;
@@ -195,6 +200,8 @@ public class PlayerMovement : MonoBehaviour
         // reset animation
         marioAnimator.SetTrigger("gameRestart");
         alive = true;
+
+
 
     }
 
