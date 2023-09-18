@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
     public GameObject enemies;
+    public GameObject blocks;
 
     public JumpOverGoomba jumpOverGoomba;
 
@@ -42,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
     public bool alive = true;
 
     public Transform gameCamera;
+
+    int collisionLayerMask = (1 << 3) | (1 << 6) | (1 << 7);
 
 
     void PlayJumpSound()
@@ -127,7 +130,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Ground") && !onGroundState)
+        if (((collisionLayerMask & (1 << col.transform.gameObject.layer)) > 0) & !onGroundState)
         {
             onGroundState = true;
             // update animator state
@@ -151,6 +154,7 @@ public class PlayerMovement : MonoBehaviour
         restartBtn.transform.localPosition = new Vector3(0.0f, -100.0f, 0.0f);
     }
 
+    public AudioClip marioCoin;
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Enemy") && alive)
@@ -161,6 +165,17 @@ public class PlayerMovement : MonoBehaviour
             marioAudio.PlayOneShot(marioDeath);
             alive = false;
             // GameOverScene();
+        }
+
+        if (other.isTrigger)
+        {
+            Animator coinAnimator = other.GetComponentInParent<Animator>();
+            coinAnimator.SetTrigger("onHit");
+            marioAudio.PlayOneShot(marioCoin);
+
+            //CURRENT ISSUE IS HERE
+            Debug.Log(coinAnimator.GetAnimatorTransitionInfo(0));
+
         }
     }
 
@@ -197,10 +212,16 @@ public class PlayerMovement : MonoBehaviour
         scoreText.transform.localPosition = new Vector3(-663.0f, 472.0f, 0.0f);
         restartBtn.transform.localPosition = new Vector3(899.0f, 485.0f, 0.0f);
 
-        // reset animation
+        // reset animations
         marioAnimator.SetTrigger("gameRestart");
         alive = true;
 
+        foreach (Transform eachChild in blocks.transform)
+        {
+            Animator childAnimator = eachChild.GetComponent<Animator>();
+            childAnimator.SetTrigger("gameRestart");
+
+        }
 
 
     }
