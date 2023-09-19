@@ -12,7 +12,9 @@ public class PlayerMovement : MonoBehaviour
     public float upSpeed = 10;
 
     public float deathImpulse;
-    private bool onGroundState = true;
+
+    [System.NonSerialized]
+    public bool onGroundState = true;
     private Rigidbody2D marioBody;
 
     // global variables
@@ -21,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
     public GameObject enemies;
+    public GameObject blocks;
 
     public JumpOverGoomba jumpOverGoomba;
 
@@ -190,6 +193,15 @@ public class PlayerMovement : MonoBehaviour
         foreach (Transform eachChild in enemies.transform)
         {
             eachChild.transform.localPosition = eachChild.GetComponent<EnemyMovement>().startPosition;
+        }
+
+        //reset Blocks
+        foreach (Transform block in blocks.transform)
+        {
+            if (block.transform.gameObject.TryGetComponent<BlockCoinController>(out BlockCoinController coinController))
+            {
+                coinController.ResetBlock();
+            }
         }
         // reset score
         jumpOverGoomba.score = 0;
