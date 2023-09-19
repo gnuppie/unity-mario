@@ -167,14 +167,13 @@ public class PlayerMovement : MonoBehaviour
             // GameOverScene();
         }
 
-        if (other.isTrigger)
+        // Check if the block is a trigger and whether it has alr been hit
+        if (other.isTrigger && !other.GetComponentInParent<Animator>().GetBool("alrHit"))
         {
             Animator coinAnimator = other.GetComponentInParent<Animator>();
             coinAnimator.SetTrigger("onHit");
             marioAudio.PlayOneShot(marioCoin);
-
-            //CURRENT ISSUE IS HERE
-            Debug.Log(coinAnimator.GetAnimatorTransitionInfo(0));
+            coinAnimator.SetBool("alrHit", true);
 
         }
     }
@@ -220,6 +219,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Animator childAnimator = eachChild.GetComponent<Animator>();
             childAnimator.SetTrigger("gameRestart");
+            childAnimator.SetBool("alrHit", false);
 
         }
 

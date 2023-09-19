@@ -2501,6 +2501,7 @@ MonoBehaviour:
   marioAudio: {fileID: 1878195560}
   marioDeath: {fileID: 8300000, guid: e0cf2536de33a7a49b5b902489ac24b8, type: 3}
   gameCamera: {fileID: 519420032}
+  marioCoin: {fileID: 8300000, guid: d885ffc842af744d89f7d595ffcc176a, type: 3}
 --- !u!50 &1878195556
 Rigidbody2D:
   serializedVersion: 4
@@ -3287,14 +3288,6 @@ PrefabInstance:
     - target: {fileID: 7066793237484068140, guid: a3be0e544402eb441bf4e76175800ec3, type: 3}
       propertyPath: m_Name
       value: Question-Box-Spring
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100442111061677055, guid: a3be0e544402eb441bf4e76175800ec3, type: 3}
-      propertyPath: m_Size.y
-      value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 8100442111061677055, guid: a3be0e544402eb441bf4e76175800ec3, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.47
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
