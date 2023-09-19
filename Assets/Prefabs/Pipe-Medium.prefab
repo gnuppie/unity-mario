@@ -85,16 +85,70 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4989822136498493610, guid: be9d17b3f23f3c84592cfc7a9ed92698, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3695513993232641343, guid: be9d17b3f23f3c84592cfc7a9ed92698, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8568495524178047280}
   m_SourcePrefab: {fileID: 100100000, guid: be9d17b3f23f3c84592cfc7a9ed92698, type: 3}
 --- !u!4 &3122466355550481601 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7952085843300702169, guid: be9d17b3f23f3c84592cfc7a9ed92698, type: 3}
   m_PrefabInstance: {fileID: 4975986562096970520}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8522880942991595047 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3695513993232641343, guid: be9d17b3f23f3c84592cfc7a9ed92698, type: 3}
+  m_PrefabInstance: {fileID: 4975986562096970520}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &8568495524178047280
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8522880942991595047}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.75, y: 1}
+    newSize: {x: 1.75, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.75, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &5194523467915159850
 PrefabInstance:
   m_ObjectHideFlags: 0
