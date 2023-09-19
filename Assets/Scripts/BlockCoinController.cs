@@ -13,6 +13,9 @@ public class BlockCoinController : MonoBehaviour
 
     public Rigidbody2D childBody;
 
+    // for audio
+    public AudioSource coinAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +34,14 @@ public class BlockCoinController : MonoBehaviour
             // Debug.Log("Hit While Jumping");
             blockAnimator.SetTrigger("onHit");
 
+            if (!blockAnimator.GetBool("alrHit"))
+            {
+                Debug.Log("Play");
+                coinAudio.PlayOneShot(coinAudio.clip);
+                blockAnimator.SetBool("alrHit", true);
+            }
+
+
             // Disable the movement of QuestionBox
             if (currentBlock.CompareTag("QuestionBox"))
             {
@@ -42,6 +53,7 @@ public class BlockCoinController : MonoBehaviour
     public void ResetBlock()
     {
         blockAnimator.SetTrigger("gameRestart");
+        blockAnimator.SetBool("alrHit", false);
         if (currentBlock.CompareTag("QuestionBox"))
         {
             childBody.bodyType = RigidbodyType2D.Dynamic;
