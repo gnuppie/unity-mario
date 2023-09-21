@@ -82,7 +82,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
-  m_MaskInteraction: 2
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &7513358007193324468
 GameObject:
@@ -268,10 +268,17 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
+<<<<<<< HEAD
   - {x: 0.51, y: -0.51}
   - {x: 0.51, y: 0.51}
   - {x: -0.51, y: 0.51}
   - {x: -0.51, y: -0.51}
+=======
+  - {x: 0.5, y: -0.5}
+  - {x: 0.5, y: 0.525}
+  - {x: -0.5, y: 0.525}
+  - {x: -0.5, y: -0.5}
+>>>>>>> f425b359afb8c14343c77a4316d1f19cd4ec569e
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -491,7 +498,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
+<<<<<<< HEAD
   m_Offset: {x: -0.002913475, y: -0.02937007}
+=======
+  m_Offset: {x: 0, y: -0.04013872}
+>>>>>>> f425b359afb8c14343c77a4316d1f19cd4ec569e
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -502,7 +513,11 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Size: {x: 0.9589672, y: 0.94125986}
+=======
+  m_Size: {x: 0.8774109, y: 0.91972256}
+>>>>>>> f425b359afb8c14343c77a4316d1f19cd4ec569e
   m_EdgeRadius: 0
 --- !u!50 &7897321469895018494
 Rigidbody2D:
@@ -516,7 +531,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
+<<<<<<< HEAD
   m_Mass: 0.90263736
+=======
+  m_Mass: 0.8069746
+>>>>>>> f425b359afb8c14343c77a4316d1f19cd4ec569e
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
