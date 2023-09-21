@@ -16,6 +16,8 @@ public class BlockCoinController : MonoBehaviour
     // for audio
     public AudioSource coinAudio;
 
+    private float coinDelay = 0.2f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,34 +31,40 @@ public class BlockCoinController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.name == "Mario" && !mario.onGroundState)
+        if (other.name == "Mario")
         {
-            // Debug.Log("Hit While Jumping");
             blockAnimator.SetTrigger("onHit");
-
             if (!blockAnimator.GetBool("alrHit"))
             {
-                Debug.Log("Play");
-                coinAudio.PlayOneShot(coinAudio.clip);
-                blockAnimator.SetBool("alrHit", true);
-            }
 
-
-            // Disable the movement of QuestionBox
-            if (currentBlock.CompareTag("QuestionBox"))
-            {
-                childBody.bodyType = RigidbodyType2D.Static;
+                StartCoroutine(waitCoin());
             }
         }
     }
 
     public void ResetBlock()
     {
-        blockAnimator.SetTrigger("gameRestart");
         blockAnimator.SetBool("alrHit", false);
         if (currentBlock.CompareTag("QuestionBox"))
         {
             childBody.bodyType = RigidbodyType2D.Dynamic;
+        }
+        blockAnimator.SetTrigger("gameRestart");
+
+
+    }
+
+    IEnumerator waitCoin()
+    {
+        blockAnimator.SetBool("alrHit", true);
+        // wait for coinDelay
+        yield return new WaitForSeconds(coinDelay);
+        coinAudio.PlayOneShot(coinAudio.clip);
+
+        // Disable the movement of QuestionBox
+        if (currentBlock.CompareTag("QuestionBox"))
+        {
+            childBody.bodyType = RigidbodyType2D.Static;
         }
     }
 }

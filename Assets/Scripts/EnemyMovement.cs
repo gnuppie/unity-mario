@@ -12,7 +12,7 @@ public class EnemyMovement : MonoBehaviour
     private Vector2 velocity;
     private Rigidbody2D enemyBody;
 
-    public Vector3 startPosition = new Vector3(0.0f, 0.0f, 0.0f);
+    public Vector3 startPosition = new Vector3(8.0f, -5.4f, 0.0f);
 
     void Start()
     {
