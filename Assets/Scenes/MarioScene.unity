@@ -2305,7 +2305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyLocation: {fileID: 638754337}
   scoreText: {fileID: 118463962}
-  boxSize: {x: 0.5, y: 1, z: 0}
+  boxSize: {x: 0.5, y: 0.1, z: 0}
   maxDistance: 0.5
   layerMask:
     serializedVersion: 2
