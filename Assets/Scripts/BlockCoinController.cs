@@ -59,12 +59,15 @@ public class BlockCoinController : MonoBehaviour
         blockAnimator.SetBool("alrHit", true);
         // wait for coinDelay
         yield return new WaitForSeconds(coinDelay);
-        coinAudio.PlayOneShot(coinAudio.clip);
-
         // Disable the movement of QuestionBox
         if (currentBlock.CompareTag("QuestionBox"))
         {
             childBody.bodyType = RigidbodyType2D.Static;
         }
+
+        // Play Sound
+        coinAudio.PlayOneShot(coinAudio.clip);
+
+
     }
 }

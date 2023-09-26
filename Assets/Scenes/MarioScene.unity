@@ -2219,6 +2219,11 @@ MonoBehaviour:
   marioAudio: {fileID: 1878195560}
   marioDeath: {fileID: 8300000, guid: e0cf2536de33a7a49b5b902489ac24b8, type: 3}
   gameCamera: {fileID: 519420032}
+  boxSize: {x: 0.5, y: 1, z: 0}
+  maxDistance: 0.5
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 264
 --- !u!50 &1878195556
 Rigidbody2D:
   serializedVersion: 4

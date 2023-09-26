@@ -128,13 +128,30 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    int collisionLayerMask = (1 << 3) | (1 << 6) | (1 << 7);
+    public Vector3 boxSize;
+    public float maxDistance;
+    public LayerMask layerMask;
+    private bool onGroundCheck()
+    {
+        if (Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, maxDistance, layerMask))
+        {
+            // Debug.Log("on ground");
+            return true;
+        }
+        else
+        {
+            // Debug.Log("not on ground");
+            return false;
+        }
+    }
+
+    int collisionLayerMask = (1 << 3) | (1 << 6) | (1 << 8);
     void OnCollisionEnter2D(Collision2D col)
     {
 
-        if (((collisionLayerMask & (1 << col.transform.gameObject.layer)) > 0) & !onGroundState)
+        if (((collisionLayerMask & (1 << col.GetContact(0).collider.gameObject.layer)) > 0) & !onGroundState)
         {
-            onGroundState = true;
+            onGroundState = onGroundCheck();
             // update animator state
             marioAnimator.SetBool("onGround", onGroundState);
         }
