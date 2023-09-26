@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
         if (alive)
         {
             // toggle state
-            if (Input.GetKeyDown("a") && faceRightState)
+            if ((Input.GetKeyDown("a") || Input.GetKeyDown("left")) && faceRightState)
             {
                 faceRightState = false;
                 marioSprite.flipX = true;
@@ -82,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
                     marioAnimator.SetTrigger("onSkid");
             }
 
-            if (Input.GetKeyDown("d") && !faceRightState)
+            if ((Input.GetKeyDown("d") || Input.GetKeyDown("right")) && !faceRightState)
             {
                 faceRightState = true;
                 marioSprite.flipX = false;
@@ -110,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             // stop
-            if (Input.GetKeyUp("a") || Input.GetKeyUp("d"))
+            if (Input.GetKeyUp("a") || Input.GetKeyUp("d") || Input.GetKeyUp("left") || Input.GetKeyUp("right"))
             {
                 // stop
                 marioBody.velocity = Vector2.zero;
