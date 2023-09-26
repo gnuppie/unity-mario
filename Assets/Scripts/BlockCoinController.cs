@@ -33,10 +33,10 @@ public class BlockCoinController : MonoBehaviour
     {
         if (other.name == "Mario")
         {
-            blockAnimator.SetTrigger("onHit");
+
             if (!blockAnimator.GetBool("alrHit"))
             {
-
+                blockAnimator.SetTrigger("onHit");
                 StartCoroutine(waitCoin());
             }
         }
@@ -45,10 +45,10 @@ public class BlockCoinController : MonoBehaviour
     public void ResetBlock()
     {
         blockAnimator.SetBool("alrHit", false);
-        if (currentBlock.CompareTag("QuestionBox"))
-        {
-            childBody.bodyType = RigidbodyType2D.Dynamic;
-        }
+        // if (currentBlock.CompareTag("QuestionBox"))
+        // {
+        childBody.bodyType = RigidbodyType2D.Dynamic;
+        // }
         blockAnimator.SetTrigger("gameRestart");
 
 

@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 faceRightState = false;
                 marioSprite.flipX = true;
-                if (marioBody.velocity.x > 0.1f)
+                if (marioBody.velocity.x > 0.05f)
                     marioAnimator.SetTrigger("onSkid");
             }
 
@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 faceRightState = true;
                 marioSprite.flipX = false;
-                if (marioBody.velocity.x < -0.1f)
+                if (marioBody.velocity.x < -0.05f)
                     marioAnimator.SetTrigger("onSkid");
             }
 
