@@ -2208,7 +2208,7 @@ MonoBehaviour:
   speed: 150
   maxspeed: 5
   upSpeed: 30
-  deathImpulse: 1
+  deathImpulse: 30
   scoreText: {fileID: 118463962}
   enemies: {fileID: 1192192614}
   blocks: {fileID: 592209373}
