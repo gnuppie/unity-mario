@@ -26,17 +26,13 @@ public class PlayerMovement : MonoBehaviour
     public GameObject blocks;
 
 
-    // public GameObject gameOverScreen;
-    // public GameObject restartBtn;
-
-
     // for animation
     public Animator marioAnimator;
 
     // for audio
     public AudioSource marioAudio;
 
-    public AudioClip marioDeath;
+    public AudioSource marioDeathAudio;
 
     // state
     [System.NonSerialized]
@@ -204,18 +200,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    // public TextMeshProUGUI scoreText;
-
-    // void GameOverScene()
-    // {
-    //     // stop time
-    //     Time.timeScale = 0.0f;
-    //     // set gameover scene
-    //     gameOverScreen.SetActive(true);
-    //     scoreText.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
-    //     restartBtn.transform.localPosition = new Vector3(0.0f, -100.0f, 0.0f);
-    // }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Enemy") && alive)
@@ -223,19 +207,10 @@ public class PlayerMovement : MonoBehaviour
             // Debug.Log("Collided with goomba!");
             // play death animation
             marioAnimator.Play("mario_die");
-            marioAudio.PlayOneShot(marioDeath);
+            marioDeathAudio.PlayOneShot(marioDeathAudio.clip);
             alive = false;
         }
     }
-
-    // public void RestartButtonCallback(int input)
-    // {
-    //     // Debug.Log("Restart!");
-    //     // reset everything
-    //     GameRestart();
-    //     // resume time
-    //     Time.timeScale = 1.0f;
-    // }
 
     public void GameRestart()
     {
@@ -255,11 +230,6 @@ public class PlayerMovement : MonoBehaviour
                 coinController.ResetBlock();
             }
         }
-
-        // // reset from gameover screen
-        // gameOverScreen.SetActive(false);
-        // scoreText.transform.localPosition = new Vector3(-663.0f, 472.0f, 0.0f);
-        // restartBtn.transform.localPosition = new Vector3(899.0f, 485.0f, 0.0f);
 
         // reset animation
         marioAnimator.SetTrigger("gameRestart");
