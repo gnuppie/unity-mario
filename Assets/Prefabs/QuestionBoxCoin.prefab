@@ -172,6 +172,7 @@ GameObject:
   - component: {fileID: 8952968506005291870}
   - component: {fileID: 217351454622223812}
   - component: {fileID: 1500672018659855510}
+  - component: {fileID: 3662063253794971613}
   m_Layer: 7
   m_Name: QuestionBoxCoin
   m_TagString: QuestionBox
@@ -446,6 +447,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3662063253794971613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5571938653874581229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cc5aaec82ef41645ad6279fdb14e687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameter: 1
+  useInt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameManagerWeek3, Assembly-CSharp
+        m_MethodName: IncreaseScore
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8785162628021740370
 GameObject:
   m_ObjectHideFlags: 0

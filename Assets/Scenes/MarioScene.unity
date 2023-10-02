@@ -423,10 +423,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1878195555}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: RestartButtonCallback
-        m_Mode: 3
+      - m_Target: {fileID: 1678720740}
+        m_TargetAssemblyTypeName: GameManagerWeek3, Assembly-CSharp
+        m_MethodName: GameRestart
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1181,6 +1181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1192192615}
+  - component: {fileID: 1192192616}
   m_Layer: 6
   m_Name: Enemies
   m_TagString: Untagged
@@ -1204,6 +1205,18 @@ Transform:
   - {fileID: 638754337}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1192192616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192192614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e31b8fec7971873458d9eb0abd7344b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1214487052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,6 +1397,7 @@ GameObject:
   - component: {fileID: 1379689117}
   - component: {fileID: 1379689116}
   - component: {fileID: 1379689115}
+  - component: {fileID: 1379689119}
   m_Layer: 5
   m_Name: GameCanvas
   m_TagString: Untagged
@@ -1476,6 +1490,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1379689119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379689114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b694634d91b31458136e6305579aa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 118463960}
+  restartBtn: {fileID: 425912058}
+  gameOverScreen: {fileID: 2102819202}
 --- !u!1 &1417355452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1569,6 +1598,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1721992186246494472, guid: 50ecdb286fa41e748b328709a31479c8, type: 3}
+      propertyPath: useInt.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1678720740}
+    - target: {fileID: 2506467420013700362, guid: 50ecdb286fa41e748b328709a31479c8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2506467420013700362, guid: 50ecdb286fa41e748b328709a31479c8, type: 3}
+      propertyPath: useInt.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1678720740}
+    - target: {fileID: 3662063253794971613, guid: 50ecdb286fa41e748b328709a31479c8, type: 3}
+      propertyPath: useInt.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1678720740}
     - target: {fileID: 5571938653874581229, guid: 50ecdb286fa41e748b328709a31479c8, type: 3}
       propertyPath: m_Name
       value: QuestionBoxCoin (1)
@@ -1824,6 +1869,134 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1432078643577559162, guid: 50ecdb286fa41e748b328709a31479c8, type: 3}
   m_PrefabInstance: {fileID: 1463583543}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1678720739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1678720741}
+  - component: {fileID: 1678720740}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1678720740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678720739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c882d23e18c5942ad953e8643a6730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1379689119}
+        m_TargetAssemblyTypeName: HUDManager, Assembly-CSharp
+        m_MethodName: GameStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  gameRestart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1379689119}
+        m_TargetAssemblyTypeName: HUDManager, Assembly-CSharp
+        m_MethodName: GameStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1878195555}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: GameRestart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1192192616}
+        m_TargetAssemblyTypeName: EnemyManager, Assembly-CSharp
+        m_MethodName: GameRestart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  scoreChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1379689119}
+        m_TargetAssemblyTypeName: HUDManager, Assembly-CSharp
+        m_MethodName: SetScore
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  gameOver:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1379689119}
+        m_TargetAssemblyTypeName: HUDManager, Assembly-CSharp
+        m_MethodName: GameOver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &1678720741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678720739}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.2366495, y: -1.0976129, z: -0.66441095}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1684515215
 GameObject:
   m_ObjectHideFlags: 0
@@ -2113,14 +2286,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1878195554}
   - component: {fileID: 1878195553}
-  - component: {fileID: 1878195555}
   - component: {fileID: 1878195556}
   - component: {fileID: 1878195557}
-  - component: {fileID: 1878195558}
   - component: {fileID: 1878195559}
   - component: {fileID: 1878195560}
   - component: {fileID: 1878195561}
   - component: {fileID: 1878195562}
+  - component: {fileID: 1878195555}
+  - component: {fileID: 1878195558}
   m_Layer: 0
   m_Name: Mario
   m_TagString: Player
@@ -2211,16 +2384,13 @@ MonoBehaviour:
   maxspeed: 5
   upSpeed: 30
   deathImpulse: 30
-  scoreText: {fileID: 118463962}
   enemies: {fileID: 1192192614}
   blocks: {fileID: 592209373}
-  jumpOverGoomba: {fileID: 1878195558}
-  gameOverScreen: {fileID: 2102819202}
-  restartBtn: {fileID: 425912057}
   marioAnimator: {fileID: 1878195559}
   marioAudio: {fileID: 1878195560}
   marioDeath: {fileID: 8300000, guid: e0cf2536de33a7a49b5b902489ac24b8, type: 3}
   gameCamera: {fileID: 519420032}
+  gameManager: {fileID: 1678720740}
   boxSize: {x: 0.5, y: 1, z: 0}
   maxDistance: 0.5
   layerMask:
@@ -2317,6 +2487,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 8
+  gameManager: {fileID: 1678720740}
 --- !u!95 &1878195559
 Animator:
   serializedVersion: 5
@@ -2860,6 +3031,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1721992186246494472, guid: 50ecdb286fa41e748b328709a31479c8, type: 3}
+      propertyPath: useInt.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1678720740}
+    - target: {fileID: 2506467420013700362, guid: 50ecdb286fa41e748b328709a31479c8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2506467420013700362, guid: 50ecdb286fa41e748b328709a31479c8, type: 3}
+      propertyPath: useInt.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1678720740}
+    - target: {fileID: 3662063253794971613, guid: 50ecdb286fa41e748b328709a31479c8, type: 3}
+      propertyPath: useInt.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1678720740}
     - target: {fileID: 5571938653874581229, guid: 50ecdb286fa41e748b328709a31479c8, type: 3}
       propertyPath: m_Name
       value: QuestionBoxCoin (2)
@@ -3138,6 +3325,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3662063253794971613, guid: 50ecdb286fa41e748b328709a31479c8, type: 3}
+      propertyPath: useInt.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1678720740}
     - target: {fileID: 5571938653874581229, guid: 50ecdb286fa41e748b328709a31479c8, type: 3}
       propertyPath: m_Name
       value: QuestionBoxCoin
@@ -3391,6 +3582,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 592209374}
     m_Modifications:
+    - target: {fileID: 2265140079147104032, guid: 9cdc39d7493f5d2499a4b61d8685e52c, type: 3}
+      propertyPath: useInt.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1678720740}
     - target: {fileID: 4342429647855394441, guid: 9cdc39d7493f5d2499a4b61d8685e52c, type: 3}
       propertyPath: mario
       value: 
@@ -3574,3 +3769,4 @@ SceneRoots:
   - {fileID: 1192192615}
   - {fileID: 1159193141}
   - {fileID: 1155844062}
+  - {fileID: 1678720741}
