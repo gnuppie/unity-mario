@@ -1014,6 +1014,134 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1123301793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1123301795}
+  - component: {fileID: 1123301794}
+  m_Layer: 0
+  m_Name: CoinSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1123301794
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123301793}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -4291431940365653714, guid: 322297749b912ce4c9f93e7a21f4bda9, type: 2}
+  m_audioClip: {fileID: 8300000, guid: d885ffc842af744d89f7d595ffcc176a, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1123301795
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123301793}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1678720741}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1138139499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1655,6 +1783,10 @@ PrefabInstance:
       propertyPath: mario
       value: 
       objectReference: {fileID: 1878195555}
+    - target: {fileID: 1350682034307680605, guid: 50ecdb286fa41e748b328709a31479c8, type: 3}
+      propertyPath: coinAudio
+      value: 
+      objectReference: {fileID: 1123301794}
     - target: {fileID: 1432078643577559162, guid: 50ecdb286fa41e748b328709a31479c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15
@@ -2093,6 +2225,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1828736289}
+  - {fileID: 1123301795}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1684515215
@@ -3217,6 +3350,10 @@ PrefabInstance:
       propertyPath: mario
       value: 
       objectReference: {fileID: 1878195555}
+    - target: {fileID: 1350682034307680605, guid: 50ecdb286fa41e748b328709a31479c8, type: 3}
+      propertyPath: coinAudio
+      value: 
+      objectReference: {fileID: 1123301794}
     - target: {fileID: 1432078643577559162, guid: 50ecdb286fa41e748b328709a31479c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14
@@ -3511,6 +3648,10 @@ PrefabInstance:
       propertyPath: mario
       value: 
       objectReference: {fileID: 1878195555}
+    - target: {fileID: 1350682034307680605, guid: 50ecdb286fa41e748b328709a31479c8, type: 3}
+      propertyPath: coinAudio
+      value: 
+      objectReference: {fileID: 1123301794}
     - target: {fileID: 1432078643577559162, guid: 50ecdb286fa41e748b328709a31479c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13
@@ -3816,6 +3957,10 @@ PrefabInstance:
       propertyPath: mario
       value: 
       objectReference: {fileID: 1878195555}
+    - target: {fileID: 4342429647855394441, guid: 9cdc39d7493f5d2499a4b61d8685e52c, type: 3}
+      propertyPath: coinAudio
+      value: 
+      objectReference: {fileID: 1123301794}
     - target: {fileID: 6857784237831405757, guid: 9cdc39d7493f5d2499a4b61d8685e52c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16
