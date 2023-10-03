@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
+using Unity.VisualScripting;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -202,13 +203,25 @@ public class PlayerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy") && alive)
+        if (alive)
         {
-            // Debug.Log("Collided with goomba!");
-            // play death animation
-            marioAnimator.Play("mario_die");
-            marioDeathAudio.PlayOneShot(marioDeathAudio.clip);
-            alive = false;
+            if (other.gameObject.CompareTag("Stomp") && (transform.position.y > other.gameObject.transform.position.y))
+            {
+                GameObject parent = other.gameObject.transform.parent.gameObject;
+                parent.GetComponent<Animator>().SetTrigger("stomped");
+                // Debug.Log("STOMP");
+                other.enabled = false;
+                parent.GetComponent<EdgeCollider2D>().enabled = false;
+                gameManager.IncreaseScore(1);
+            }
+            else if (other.gameObject.CompareTag("Enemy"))
+            {
+                // Debug.Log("Collided with goomba!");
+                // play death animation
+                marioAnimator.Play("mario_die");
+                marioDeathAudio.PlayOneShot(marioDeathAudio.clip);
+                alive = false;
+            }
         }
     }
 
