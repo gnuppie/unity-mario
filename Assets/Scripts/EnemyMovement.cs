@@ -14,6 +14,8 @@ public class EnemyMovement : MonoBehaviour
 
     public Vector3 startPosition = new Vector3(8.0f, -5.4f, 0.0f);
 
+    public AudioSource stompAudio;
+
     void Start()
     {
         enemyBody = GetComponent<Rigidbody2D>();
@@ -43,6 +45,11 @@ public class EnemyMovement : MonoBehaviour
             ComputeVelocity();
             Movegoomba();
         }
+    }
+
+    public void PlayStompSound()
+    {
+        stompAudio.PlayOneShot(stompAudio.clip);
     }
 
     void OnTriggerEnter2D(Collider2D other)

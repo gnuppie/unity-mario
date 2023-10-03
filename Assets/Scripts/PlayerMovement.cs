@@ -152,7 +152,7 @@ public class PlayerMovement : MonoBehaviour
         if (alive && jumpedState)
         {
             // jump higher
-            marioBody.AddForce(Vector2.up * upSpeed * 60, ForceMode2D.Force);
+            marioBody.AddForce(Vector2.up * upSpeed * 40, ForceMode2D.Force);
             jumpedState = false;
 
         }
@@ -205,6 +205,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (alive)
         {
+            // check if Goomba, and whether Mario is hitting goomba from above
             if (other.gameObject.CompareTag("Stomp") && (transform.position.y > other.gameObject.transform.position.y))
             {
                 GameObject parent = other.gameObject.transform.parent.gameObject;
@@ -213,6 +214,7 @@ public class PlayerMovement : MonoBehaviour
                 other.enabled = false;
                 parent.GetComponent<EdgeCollider2D>().enabled = false;
                 gameManager.IncreaseScore(1);
+                marioBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
             }
             else if (other.gameObject.CompareTag("Enemy"))
             {
