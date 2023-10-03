@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Events;
 
 public class GameManagerWeek3 : MonoBehaviour
@@ -32,6 +33,7 @@ public class GameManagerWeek3 : MonoBehaviour
         SetScore(score);
         gameRestart.Invoke();
         Time.timeScale = 1.0f;
+        Lowpass();
     }
 
     public void IncreaseScore(int increment)
@@ -50,5 +52,21 @@ public class GameManagerWeek3 : MonoBehaviour
     {
         gameOver.Invoke();
         Time.timeScale = 0.0f;
+        Lowpass();
+    }
+
+    public AudioMixerSnapshot unpaused;
+    public AudioMixerSnapshot paused;
+
+    void Lowpass()
+    {
+        if (Time.timeScale == 0)
+        {
+            paused.TransitionTo(.01f);
+        }
+        else
+        {
+            unpaused.TransitionTo(.01f);
+        }
     }
 }

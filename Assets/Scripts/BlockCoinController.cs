@@ -66,6 +66,8 @@ public class BlockCoinController : MonoBehaviour
         }
 
         // Play Sound
+        coinAudio.volume = UnityEngine.Random.Range(0.8f, 1.0f);
+        coinAudio.pitch = UnityEngine.Random.Range(0.85f, 1.1f);
         coinAudio.PlayOneShot(coinAudio.clip);
 
 

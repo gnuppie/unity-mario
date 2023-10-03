@@ -6,19 +6,22 @@ AudioMixerSnapshotController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Loud
+  m_Name: Dead
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 0ebab14c7564551468ead9f77732f368
   m_FloatValues:
     cd592d310d5c7e249b6a231d426801c9: 1000
     a69e9785e7f9ee948a965f21a85b7bc8: 1.7477665
+    89a2897642a9e994ab280d4c0f62cef1: 1.35
     170d295727fc41742a027cbc67cf3019: 3.2656894
     868a7898bb0984a43acc0b8b669bb280: 0
     d06333db2e0ed884794d63839b7824c9: 5.8
+    4cedce0c6ebb5fa45918cb88308ddabd: 650
     4933f4dcb09786249a63a1c533a293a8: -65
     93f2d41d24d181440bfea7c1a68b45f5: 2000
-    7435a3df116a7f7478ebfc1a7a544a6b: -3.8500485
-  m_TransitionOverrides: {}
+    7435a3df116a7f7478ebfc1a7a544a6b: -10
+  m_TransitionOverrides:
+    4cedce0c6ebb5fa45918cb88308ddabd: 4
 --- !u!244 &-8537950050137392509
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -243,8 +246,9 @@ AudioMixerSnapshotController:
     4933f4dcb09786249a63a1c533a293a8: -65
     93f2d41d24d181440bfea7c1a68b45f5: 2000
     f859414e67bed604dbb9918c2480b7cd: -20
-    7435a3df116a7f7478ebfc1a7a544a6b: -10.35
-  m_TransitionOverrides: {}
+    7435a3df116a7f7478ebfc1a7a544a6b: -5
+  m_TransitionOverrides:
+    4cedce0c6ebb5fa45918cb88308ddabd: 4
 --- !u!244 &629110484921982363
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -275,6 +279,24 @@ AudioMixerEffectController:
   m_MixLevel: 868a7898bb0984a43acc0b8b669bb280
   m_Parameters: []
   m_SendTarget: {fileID: 5423471882393762411}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &1441950138712586976
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: d522508f2bd6468499ac7a3c8e3ab78e
+  m_EffectName: Lowpass
+  m_MixLevel: ead0d52cccd69484585f4af11fa89e39
+  m_Parameters:
+  - m_ParameterName: Cutoff freq
+    m_GUID: 4cedce0c6ebb5fa45918cb88308ddabd
+  - m_ParameterName: Resonance
+    m_GUID: 89a2897642a9e994ab280d4c0f62cef1
+  m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
 --- !u!244 &2838423234251976376
@@ -499,6 +521,7 @@ AudioMixerGroupController:
   m_Pitch: 571a9d3db96090c4a9d4880deb1f9032
   m_Send: 00000000000000000000000000000000
   m_Effects:
+  - {fileID: 1441950138712586976}
   - {fileID: -4048134886091165037}
   - {fileID: 6795956430522096632}
   - {fileID: 5423471882393762411}

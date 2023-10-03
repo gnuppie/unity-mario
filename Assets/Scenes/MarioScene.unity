@@ -2217,6 +2217,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  unpaused: {fileID: 24500006, guid: 322297749b912ce4c9f93e7a21f4bda9, type: 2}
+  paused: {fileID: -8867602703676404904, guid: 322297749b912ce4c9f93e7a21f4bda9, type: 2}
 --- !u!4 &1678720741
 Transform:
   m_ObjectHideFlags: 0
