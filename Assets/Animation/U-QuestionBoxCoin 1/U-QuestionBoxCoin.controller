@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 91c0745ff04e9ea44bde03ee6355080c, type: 2}
+  m_Motion: {fileID: 7400000, guid: e9d8f9146e3a02b468b2195a2b3f4dc5, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -74,7 +74,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6f0b448a1e0df974292d1f6ea500a7b3, type: 2}
+  m_Motion: {fileID: 7400000, guid: 5e0562d787bfd0949b933777b775d996, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -111,7 +111,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: QuestionBoxCoin
+  m_Name: U-QuestionBoxCoin
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: onHit

@@ -22,7 +22,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 4818d75375f6dbc438d58e05c21fc6d6, type: 2}
+  m_Motion: {fileID: 7400000, guid: 64319f86c4a35f14cb6387a832270415, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -49,7 +49,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1c6e560c25276504a989cddeda6178f3, type: 2}
+  m_Motion: {fileID: 7400000, guid: f1303585d8bd6f742a335e7af917448c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -61,7 +61,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Goomba
+  m_Name: GreenGoomba
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: stomped
