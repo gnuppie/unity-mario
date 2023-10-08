@@ -6,7 +6,9 @@ Purpose is to familiarize with the Unity software and C# Language
 
 Progress:
 
-29/9/23: Week 3 - Only Left with Checkoff
+8/10/23: Started Week 4
+
+3/10/23: Completed Week 3
 
 20/9/23: Completed Week 2
 
