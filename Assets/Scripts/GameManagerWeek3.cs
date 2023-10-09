@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Events;
 
-public class GameManagerWeek3 : MonoBehaviour
+public class GameManagerWeek3 : Singleton<GameManagerWeek3>
 {
     // events
     public UnityEvent gameStart;

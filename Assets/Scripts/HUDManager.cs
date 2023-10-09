@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class HUDManager : MonoBehaviour
+public class HUDManager : Singleton<HUDManager>
 {
     private Vector3[] scoreTextPosition = {
         new Vector3(-663.0f, 472.0f, 0.0f),

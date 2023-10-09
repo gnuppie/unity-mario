@@ -21,6 +21,7 @@ public class BlockCoinController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        mario = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
 
     }
 

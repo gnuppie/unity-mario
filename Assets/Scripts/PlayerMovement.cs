@@ -5,8 +5,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : Singleton<PlayerMovement>
 {
     public float speed = 10;
     public float maxspeed = 20;
@@ -62,6 +63,9 @@ public class PlayerMovement : MonoBehaviour
 
         // update animator state
         marioAnimator.SetBool("onGround", onGroundState);
+
+        // subscribe to scene manager scene change
+        SceneManager.activeSceneChanged += SetStartingPosition;
 
     }
 
@@ -232,19 +236,19 @@ public class PlayerMovement : MonoBehaviour
         // reset position
         marioBody.transform.position = new Vector3(0.0f, -5.4f, 0.0f);
         // reset camera position
-        gameCamera.position = new Vector3(0, -2, -10);
+        // gameCamera.position = new Vector3(0, -2, -10);
         // reset sprite direction
         faceRightState = true;
         marioSprite.flipX = false;
 
-        //reset Blocks
-        foreach (Transform block in blocks.transform)
-        {
-            if (block.transform.gameObject.TryGetComponent<BlockCoinController>(out BlockCoinController coinController))
-            {
-                coinController.ResetBlock();
-            }
-        }
+        // //reset Blocks
+        // foreach (Transform block in blocks.transform)
+        // {
+        //     if (block.transform.gameObject.TryGetComponent<BlockCoinController>(out BlockCoinController coinController))
+        //     {
+        //         coinController.ResetBlock();
+        //     }
+        // }
 
         // reset animation
         marioAnimator.SetTrigger("gameRestart");
@@ -252,6 +256,16 @@ public class PlayerMovement : MonoBehaviour
 
 
 
+    }
+
+
+    public void SetStartingPosition(Scene current, Scene next)
+    {
+        if (next.name == "World1-2")
+        {
+            // change the position accordingly in your World-1-2 case
+            this.transform.position = new Vector3(0.0f, -5.4f, 0.0f);
+        }
     }
 
 

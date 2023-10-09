@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class JumpOverGoomba : MonoBehaviour
+public class JumpOverGoomba : Singleton<JumpOverGoomba>
 {
     public Transform enemyLocation;
     public TextMeshProUGUI scoreText;
