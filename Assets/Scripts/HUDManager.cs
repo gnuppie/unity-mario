@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class HUDManager : Singleton<HUDManager>
+public class HUDManager : MonoBehaviour
 {
     private Vector3[] scoreTextPosition = {
         new Vector3(-663.0f, 472.0f, 0.0f),
@@ -48,5 +48,16 @@ public class HUDManager : Singleton<HUDManager>
         gameOverScreen.SetActive(true);
         scoreText.transform.localPosition = scoreTextPosition[1];
         restartBtn.localPosition = restartBtnPosition[1];
+    }
+
+    void Awake()
+    {
+        // other instructions
+        // subscribe to events
+        GameManagerWeek3.instance.gameStart.AddListener(GameStart);
+        GameManagerWeek3.instance.gameOver.AddListener(GameOver);
+        GameManagerWeek3.instance.gameRestart.AddListener(GameStart);
+        GameManagerWeek3.instance.scoreChange.AddListener(SetScore);
+
     }
 }

@@ -18,7 +18,6 @@ public class BlockManager : MonoBehaviour
 
     }
 
-
     public void GameRestart()
     {
         //reset Blocks
@@ -30,4 +29,12 @@ public class BlockManager : MonoBehaviour
             }
         }
     }
+
+    void Awake()
+    {
+        // other instructions
+        // subscribe to Game Restart event
+        GameManagerWeek3.instance.gameRestart.AddListener(GameRestart);
+    }
+
 }

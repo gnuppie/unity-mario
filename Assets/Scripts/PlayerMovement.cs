@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 
-public class PlayerMovement : Singleton<PlayerMovement>
+public class PlayerMovement : MonoBehaviour
 {
     public float speed = 10;
     public float maxspeed = 20;
@@ -42,7 +42,6 @@ public class PlayerMovement : Singleton<PlayerMovement>
 
     public Transform gameCamera;
 
-    public GameManagerWeek3 gameManager;
 
 
     void PlayJumpSound()
@@ -64,8 +63,8 @@ public class PlayerMovement : Singleton<PlayerMovement>
         // update animator state
         marioAnimator.SetBool("onGround", onGroundState);
 
-        // subscribe to scene manager scene change
-        SceneManager.activeSceneChanged += SetStartingPosition;
+        // // subscribe to scene manager scene change
+        // SceneManager.activeSceneChanged += SetStartingPosition;
 
     }
 
@@ -201,7 +200,7 @@ public class PlayerMovement : Singleton<PlayerMovement>
     // This is for the mario-die animation
     void GameOver()
     {
-        gameManager.GameOver();
+        GameManagerWeek3.instance.GameOver();
     }
 
 
@@ -217,7 +216,7 @@ public class PlayerMovement : Singleton<PlayerMovement>
                 // Debug.Log("STOMP");
                 other.enabled = false;
                 parent.GetComponent<EdgeCollider2D>().enabled = false;
-                gameManager.IncreaseScore(1);
+                GameManagerWeek3.instance.IncreaseScore(1);
                 marioBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
             }
             else if (other.gameObject.CompareTag("Enemy"))
@@ -259,13 +258,20 @@ public class PlayerMovement : Singleton<PlayerMovement>
     }
 
 
-    public void SetStartingPosition(Scene current, Scene next)
+    // public void SetStartingPosition(Scene current, Scene next)
+    // {
+    //     if (next.name == "World1-2")
+    //     {
+    //         // change the position accordingly in your World-1-2 case
+    //         this.transform.position = new Vector3(0.0f, -5.4f, 0.0f);
+    //     }
+    // }
+
+    void Awake()
     {
-        if (next.name == "World1-2")
-        {
-            // change the position accordingly in your World-1-2 case
-            this.transform.position = new Vector3(0.0f, -5.4f, 0.0f);
-        }
+        // other instructions
+        // subscribe to Game Restart event
+        GameManagerWeek3.instance.gameRestart.AddListener(GameRestart);
     }
 
 

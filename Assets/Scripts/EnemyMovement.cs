@@ -66,4 +66,9 @@ public class EnemyMovement : MonoBehaviour
         ComputeVelocity();
     }
 
+    void Awake()
+    {
+        GameManagerWeek3.instance.gameRestart.AddListener(GameRestart);
+    }
+
 }

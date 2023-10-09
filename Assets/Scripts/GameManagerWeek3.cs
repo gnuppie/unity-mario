@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+
 
 public class GameManagerWeek3 : Singleton<GameManagerWeek3>
 {
@@ -18,6 +20,8 @@ public class GameManagerWeek3 : Singleton<GameManagerWeek3>
     {
         gameStart.Invoke();
         Time.timeScale = 1.0f;
+        // subscribe to scene manager scene change
+        SceneManager.activeSceneChanged += SceneSetup;
     }
 
     // Update is called once per frame
@@ -25,6 +29,13 @@ public class GameManagerWeek3 : Singleton<GameManagerWeek3>
     {
 
     }
+
+    public void SceneSetup(Scene current, Scene next)
+    {
+        gameStart.Invoke();
+        SetScore(score);
+    }
+
 
     public void GameRestart()
     {

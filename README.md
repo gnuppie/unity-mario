@@ -10,7 +10,7 @@ Known Bugs:
 
 Progress:
 
-9/10/23: Week 4 Singleton Pattern Done
+9/10/23: Week 4 - Need to implement Powerups
 
 3/10/23: Completed Week 3
 
