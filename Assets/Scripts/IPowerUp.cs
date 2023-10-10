@@ -3,6 +3,7 @@ using UnityEngine;
 public interface IPowerup
 {
     void DestroyPowerup();
+    void GameRestart();
     void SpawnPowerup();
     void ApplyPowerup(MonoBehaviour i);
 
@@ -21,5 +22,5 @@ public interface IPowerup
 
 public interface IPowerupApplicable
 {
-    public void RequestPowerupEffect(Powerup i);
+    public void RequestPowerupEffect(IPowerup i);
 }

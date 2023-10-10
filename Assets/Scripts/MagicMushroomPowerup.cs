@@ -23,7 +23,7 @@ public class MagicMushroomPowerup : BasePowerup
             DestroyPowerup();
 
         }
-        else if (col.gameObject.layer == 10) // else if hitting Pipe, flip travel direction
+        else if (col.gameObject.layer == 7 || col.gameObject.layer == 10) // else if hitting Pipe, flip travel direction
         {
             if (spawned)
             {

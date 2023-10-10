@@ -9,10 +9,13 @@ public abstract class BasePowerup : MonoBehaviour, IPowerup
     protected bool goRight = true;
     protected Rigidbody2D rigidBody;
 
+    protected Vector3 startPosition;
+
     // base methods
     protected virtual void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        startPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
     }
 
     // interface methods
@@ -35,7 +38,14 @@ public abstract class BasePowerup : MonoBehaviour, IPowerup
 
     public void DestroyPowerup()
     {
-        Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
+        // Destroy(this.gameObject);
+    }
+
+    public void GameRestart()
+    {
+        transform.localPosition = startPosition;
+        this.gameObject.SetActive(true);
     }
 
     // 2. abstract methods, must be implemented by derived classes
