@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonController : MonoBehaviour
 {
@@ -16,8 +17,17 @@ public class ButtonController : MonoBehaviour
 
     }
 
-    public void ButtonClick()
+    public void RestartClick()
     {
         GameManagerWeek3.instance.GameRestart();
+    }
+
+
+    public void ReturnToMain()
+    {
+        Time.timeScale = 1.0f;
+        GameManagerWeek3.instance.Lowpass();
+        SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Single);
+
     }
 }

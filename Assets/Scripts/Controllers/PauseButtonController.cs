@@ -2,14 +2,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseButtonController : MonoBehaviour, IInteractiveButton
 {
-    private bool isPaused = false;
+    [System.NonSerialized]
+    public bool isPaused = false;
     public Sprite pauseIcon;
     public Sprite playIcon;
-    private Image image;
+
+    [System.NonSerialized]
+    public Image image;
+    public HUDManager hud;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,5 +39,16 @@ public class PauseButtonController : MonoBehaviour, IInteractiveButton
         {
             image.sprite = pauseIcon;
         }
+        GameManagerWeek3.instance.Lowpass();
+        hud.PausePlay();
+    }
+
+
+    public void ReturnToMain()
+    {
+        Time.timeScale = 1.0f;
+        GameManagerWeek3.instance.Lowpass();
+        SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Single);
+
     }
 }

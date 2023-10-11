@@ -39,12 +39,13 @@ public class GameManagerWeek3 : Singleton<GameManagerWeek3>
 
     public void GameRestart()
     {
+        Time.timeScale = 1.0f;
+        Lowpass();
         // reset score
         gameScore.Value = 0;
         SetScore(gameScore.Value);
         gameRestart.Invoke();
-        Time.timeScale = 1.0f;
-        Lowpass();
+
     }
 
     public void IncreaseScore(int increment)
@@ -69,7 +70,7 @@ public class GameManagerWeek3 : Singleton<GameManagerWeek3>
     public AudioMixerSnapshot unpaused;
     public AudioMixerSnapshot paused;
 
-    void Lowpass()
+    public void Lowpass()
     {
         if (Time.timeScale == 0)
         {
