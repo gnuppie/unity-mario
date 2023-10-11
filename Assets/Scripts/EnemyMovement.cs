@@ -7,8 +7,8 @@ public class EnemyMovement : MonoBehaviour
 
     private float originalX;
     public GameConstants gameConstants;
-    private float maxOffset;
-    private float enemyPatroltime;
+    float maxOffset;
+    float enemyPatroltime;
     private int moveRight = -1;
     private Vector2 velocity;
     private Rigidbody2D enemyBody;
@@ -64,11 +64,12 @@ public class EnemyMovement : MonoBehaviour
 
     public void GameRestart()
     {
-        transform.localPosition = startPosition;
+        transform.position = startPosition;
         originalX = transform.position.x;
         moveRight = -1;
         ComputeVelocity();
     }
+
 
     void Awake()
     {

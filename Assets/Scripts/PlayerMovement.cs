@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     float upSpeed;
     float maxSpeed;
     float speed;
+    Vector3 marioStartingPosition;
 
     [System.NonSerialized]
     public bool onGroundState = true;
@@ -57,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
         maxSpeed = gameConstants.maxSpeed;
         deathImpulse = gameConstants.deathImpulse;
         upSpeed = gameConstants.upSpeed;
+        marioStartingPosition = gameConstants.marioStartingPosition;
         // gameOverScreen.SetActive(false);
         marioSprite = GetComponent<SpriteRenderer>();
         // Set to be 30 FPS
@@ -223,7 +225,7 @@ public class PlayerMovement : MonoBehaviour
                 GameManagerWeek3.instance.IncreaseScore(1);
                 marioBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
             }
-            else if (other.gameObject.CompareTag("Enemy"))
+            else if (other.gameObject.CompareTag("Enemy") && !gameConstants.invincible)
             {
                 // Debug.Log("Collided with goomba!");
                 // play death animation
@@ -237,39 +239,18 @@ public class PlayerMovement : MonoBehaviour
     public void GameRestart()
     {
         // reset position
-        marioBody.transform.position = new Vector3(0.0f, -5.4f, 0.0f);
+        marioBody.transform.position = marioStartingPosition;
         // reset camera position
-        // gameCamera.position = new Vector3(0, -2, -10);
+        // gameCamera.position = new Vector3(0, 3.4f, -10);
         // reset sprite direction
         faceRightState = true;
         marioSprite.flipX = false;
-
-        // //reset Blocks
-        // foreach (Transform block in blocks.transform)
-        // {
-        //     if (block.transform.gameObject.TryGetComponent<BlockCoinController>(out BlockCoinController coinController))
-        //     {
-        //         coinController.ResetBlock();
-        //     }
-        // }
 
         // reset animation
         marioAnimator.SetTrigger("gameRestart");
         alive = true;
 
-
-
     }
-
-
-    // public void SetStartingPosition(Scene current, Scene next)
-    // {
-    //     if (next.name == "World1-2")
-    //     {
-    //         // change the position accordingly in your World-1-2 case
-    //         this.transform.position = new Vector3(0.0f, -5.4f, 0.0f);
-    //     }
-    // }
 
     void Awake()
     {

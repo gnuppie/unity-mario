@@ -25,10 +25,10 @@ public class CoinPowerUp : BasePowerup
 
     public void playSound()
     {
-        AudioSource coinAudio = this.transform.GetComponent<AudioSource>();
-        coinAudio.volume = UnityEngine.Random.Range(0.8f, 1.0f);
-        coinAudio.pitch = UnityEngine.Random.Range(0.85f, 1.1f);
-        coinAudio.PlayOneShot(coinAudio.clip);
+        AudioSource powerUpAudio = this.transform.GetComponent<AudioSource>();
+        powerUpAudio.volume = UnityEngine.Random.Range(0.8f, 1.0f);
+        powerUpAudio.pitch = UnityEngine.Random.Range(0.85f, 1.1f);
+        powerUpAudio.PlayOneShot(powerUpAudio.clip);
     }
 
     public override void SpawnPowerup()

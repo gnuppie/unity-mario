@@ -39,6 +39,7 @@ public class MagicMushroomPowerup : BasePowerup
     public override void SpawnPowerup()
     {
         spawned = true;
+        playSound();
         rigidBody.AddForce(Vector2.right * 3, ForceMode2D.Impulse); // move to the right
     }
 
@@ -55,5 +56,13 @@ public class MagicMushroomPowerup : BasePowerup
     {
         // TODO: do something with the object
 
+    }
+
+    public void playSound()
+    {
+        AudioSource powerUpAudio = this.transform.GetComponent<AudioSource>();
+        powerUpAudio.volume = UnityEngine.Random.Range(0.8f, 1.0f);
+        powerUpAudio.pitch = UnityEngine.Random.Range(0.85f, 1.1f);
+        powerUpAudio.PlayOneShot(powerUpAudio.clip);
     }
 }

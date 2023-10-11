@@ -16,4 +16,7 @@ public class GameConstants : ScriptableObject
     // Goomba's movement
     public float goombaPatrolTime;
     public float goombaMaxOffset;
+
+    public Vector3 cameraStartingPosition;
+    public bool invincible;
 }
