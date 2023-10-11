@@ -14,7 +14,7 @@ Camera does not reset to original position after pressing restart
 
 Progress:
 
-9/10/23: Week 4 - Implemented Powerups
+9/10/23: Week 4 - Implemented Scriptable Objects
 
 3/10/23: Completed Week 3
 

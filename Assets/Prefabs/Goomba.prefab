@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a7265b19d83ce842b4fc8989e4ac79d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPosition: {x: 8, y: 0, z: 0}
+  gameConstants: {fileID: 11400000, guid: 0e8dab085b8aecc4e855577cb4044f29, type: 2}
   stompAudio: {fileID: 1229432580070196077}
 --- !u!68 &6155469148131255049
 EdgeCollider2D:

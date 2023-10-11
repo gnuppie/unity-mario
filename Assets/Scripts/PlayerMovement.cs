@@ -9,12 +9,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 10;
-    public float maxspeed = 20;
-
-    public float upSpeed = 10;
-
-    public float deathImpulse;
+    public GameConstants gameConstants;
+    float deathImpulse;
+    float upSpeed;
+    float maxSpeed;
+    float speed;
 
     [System.NonSerialized]
     public bool onGroundState = true;
@@ -53,6 +52,11 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Set constants
+        speed = gameConstants.speed;
+        maxSpeed = gameConstants.maxSpeed;
+        deathImpulse = gameConstants.deathImpulse;
+        upSpeed = gameConstants.upSpeed;
         // gameOverScreen.SetActive(false);
         marioSprite = GetComponent<SpriteRenderer>();
         // Set to be 30 FPS
@@ -116,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 movement = new Vector2(value, 0);
         // check if it doesn't go beyond maxSpeed
-        if (marioBody.velocity.magnitude < maxspeed)
+        if (marioBody.velocity.magnitude < maxSpeed)
             marioBody.AddForce(movement * speed);
     }
 

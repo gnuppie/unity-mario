@@ -6,18 +6,22 @@ public class EnemyMovement : MonoBehaviour
 {
 
     private float originalX;
-    private float maxOffset = 5.0f;
-    private float enemyPatroltime = 2.0f;
+    public GameConstants gameConstants;
+    private float maxOffset;
+    private float enemyPatroltime;
     private int moveRight = -1;
     private Vector2 velocity;
     private Rigidbody2D enemyBody;
 
-    public Vector3 startPosition = new Vector3(8.0f, -5.4f, 0.0f);
+    private Vector3 startPosition;
 
     public AudioSource stompAudio;
 
     void Start()
     {
+        maxOffset = gameConstants.goombaMaxOffset;
+        enemyPatroltime = gameConstants.goombaPatrolTime;
+        startPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         enemyBody = GetComponent<Rigidbody2D>();
         // get the starting position
         originalX = transform.position.x;

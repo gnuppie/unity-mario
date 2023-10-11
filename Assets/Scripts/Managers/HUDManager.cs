@@ -11,13 +11,14 @@ public class HUDManager : MonoBehaviour
         };
     private Vector3[] restartBtnPosition = {
         new Vector3(899.0f, 485.0f, 0.0f),
-        new Vector3(0.0f, -100.0f, 0.0f)
+        new Vector3(0.0f, -200.0f, 0.0f)
     };
 
     public GameObject scoreText;
     public Transform restartBtn;
-
     public GameObject gameOverScreen;
+    public GameObject highscoreText;
+    public IntVariable gameScore;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +40,7 @@ public class HUDManager : MonoBehaviour
 
     public void SetScore(int score)
     {
-        scoreText.GetComponent<TextMeshProUGUI>().text = "Score: " + score.ToString();
+        scoreText.GetComponent<TextMeshProUGUI>().text = "SCORE: " + score.ToString();
     }
 
 
@@ -48,6 +49,10 @@ public class HUDManager : MonoBehaviour
         gameOverScreen.SetActive(true);
         scoreText.transform.localPosition = scoreTextPosition[1];
         restartBtn.localPosition = restartBtnPosition[1];
+        // set highscore
+        highscoreText.GetComponent<TextMeshProUGUI>().text = "TOP: " + gameScore.previousHighestValue.ToString("D6");
+        // show
+        highscoreText.SetActive(true);
     }
 
     void Awake()

@@ -14,7 +14,7 @@ public class GameManagerWeek3 : Singleton<GameManagerWeek3>
     public UnityEvent<int> scoreChange;
     public UnityEvent gameOver;
 
-    private int score = 0;
+    public IntVariable gameScore;
 
     void Start()
     {
@@ -33,15 +33,15 @@ public class GameManagerWeek3 : Singleton<GameManagerWeek3>
     public void SceneSetup(Scene current, Scene next)
     {
         gameStart.Invoke();
-        SetScore(score);
+        SetScore(gameScore.Value);
     }
 
 
     public void GameRestart()
     {
         // reset score
-        score = 0;
-        SetScore(score);
+        gameScore.Value = 0;
+        SetScore(gameScore.Value);
         gameRestart.Invoke();
         Time.timeScale = 1.0f;
         Lowpass();
@@ -49,8 +49,8 @@ public class GameManagerWeek3 : Singleton<GameManagerWeek3>
 
     public void IncreaseScore(int increment)
     {
-        score += increment;
-        SetScore(score);
+        gameScore.ApplyChange(increment);
+        SetScore(gameScore.Value);
     }
 
     public void SetScore(int score)
