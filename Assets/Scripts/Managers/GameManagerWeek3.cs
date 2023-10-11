@@ -80,4 +80,12 @@ public class GameManagerWeek3 : Singleton<GameManagerWeek3>
             unpaused.TransitionTo(.01f);
         }
     }
+
+    public void ReturnToMain()
+    {
+        Time.timeScale = 1.0f;
+        Lowpass();
+        SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Single);
+
+    }
 }

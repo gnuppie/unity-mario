@@ -4,9 +4,6 @@ Lab for 50.033 Foundations of Game Development and Design
 Purpose is to familiarize with the Unity software and C# Language
 
 
-TODO:
-Stuff
-
 Known Bugs:
 
 Camera does not reset to original position after pressing restart
@@ -14,7 +11,7 @@ Camera does not reset to original position after pressing restart
 
 Progress:
 
-9/10/23: Week 4 - Implemented Scriptable Objects
+9/10/23: Week 4 - Left with Checkoff
 
 3/10/23: Completed Week 3
 

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 
 public class HUDManager : MonoBehaviour
 {
@@ -65,4 +67,6 @@ public class HUDManager : MonoBehaviour
         GameManagerWeek3.instance.scoreChange.AddListener(SetScore);
 
     }
+
+
 }
