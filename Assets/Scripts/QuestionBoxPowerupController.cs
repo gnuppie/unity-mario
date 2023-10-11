@@ -26,10 +26,13 @@ public class QuestionBoxPowerupController : MonoBehaviour, IPowerupController
             // show disabled sprite
             this.GetComponent<Animator>().SetTrigger("spawned");
 
-            // activate box collider on mushroom
-            if (powerup.powerupType == PowerupType.MagicMushroom)
+            // activate box collider on anything else besides a coin
+            if (powerup.powerupType != PowerupType.Coin)
             {
                 this.transform.parent.GetChild(2).GetComponent<BoxCollider2D>().enabled = true;
+
+                //deactivate edge collider that prevents powerup from dropping out of the box
+                this.transform.parent.GetChild(2).GetComponent<EdgeCollider2D>().enabled = false;
             }
 
             // spawn the powerup
@@ -37,8 +40,7 @@ public class QuestionBoxPowerupController : MonoBehaviour, IPowerupController
 
 
 
-            //deactivate edge collider that prevents powerup from dropping out of the box
-            this.transform.parent.GetChild(2).GetComponent<EdgeCollider2D>().enabled = false;
+
         }
     }
 

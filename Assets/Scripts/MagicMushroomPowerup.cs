@@ -1,6 +1,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MagicMushroomPowerup : BasePowerup
@@ -39,6 +40,13 @@ public class MagicMushroomPowerup : BasePowerup
     {
         spawned = true;
         rigidBody.AddForce(Vector2.right * 3, ForceMode2D.Impulse); // move to the right
+    }
+
+    public override void GameRestart()
+    {
+        base.GameRestart();
+        this.GetComponent<BoxCollider2D>().enabled = false;
+        this.GetComponent<EdgeCollider2D>().enabled = true;
     }
 
 

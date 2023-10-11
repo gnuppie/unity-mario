@@ -26,13 +26,26 @@ public class BlockManager : MonoBehaviour
             //reset Block Animators
             block.transform.GetChild(0).gameObject.GetComponent<Animator>().SetTrigger("gameRestart");
 
-            // GameRestart() on BasePowerUp
-            if (block.transform.GetChild(2).gameObject.TryGetComponent<BasePowerup>(out BasePowerup powerup))
+            // reset bounciness of the blocks
+            if (block.transform.GetChild(0).TryGetComponent<Rigidbody2D>(out Rigidbody2D rigidBody))
             {
-                if (powerup.powerupType == PowerupType.MagicMushroom)
+                rigidBody.bodyType = RigidbodyType2D.Dynamic;
+            }
+
+
+
+
+            if (block.childCount > 2)
+            {
+                // GameRestart() on BasePowerUp
+                if (block.transform.GetChild(2).gameObject.TryGetComponent<BasePowerup>(out BasePowerup powerup))
                 {
                     powerup.GameRestart();
+
+                    // reset Spawn on BasePowerUp
+                    powerup.hasSpawned = false;
                 }
+
             }
         }
 

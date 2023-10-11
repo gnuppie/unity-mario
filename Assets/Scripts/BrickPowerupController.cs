@@ -29,26 +29,25 @@ public class BrickPowerupController : MonoBehaviour, IPowerupController
                 else // if Is Breakable, stays same state (Brick)
                 {
                     //bounce
-                    // this.GetComponent<Animator>().SetTrigger("bounce");
                 }
 
-                // activate box collider on mushroom
-                if (powerup.powerupType == PowerupType.MagicMushroom)
+                // activate box collider on anything besides a coin
+                if (powerup.powerupType != PowerupType.Coin)
                 {
                     this.transform.parent.GetChild(2).GetComponent<BoxCollider2D>().enabled = true;
+
+                    //deactivate edge collider that prevents powerup from dropping out of the box
+                    this.transform.parent.GetChild(2).GetComponent<EdgeCollider2D>().enabled = false;
                 }
 
                 // spawn powerup
                 powerupAnimator.SetTrigger("spawned");
 
-
-
-                //deactivate edge collider that prevents powerup from dropping out of the box
-                this.transform.parent.GetChild(2).GetComponent<EdgeCollider2D>().enabled = false;
             }
             else
             {
-                // else if it's the breakable brick type, can still bounce although powerup has spawned
+                // else if it's the breakable brick type
+                // CURRENTLY: can stays as a bouncable brick although powerup has spawned
 
             }
         }

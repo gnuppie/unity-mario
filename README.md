@@ -5,8 +5,8 @@ Purpose is to familiarize with the Unity software and C# Language
 
 
 TODO:
+Stuff
 
-Setup the restart to reset all instances of powerups and powerup blocks
 Known Bugs:
 
 Camera does not reset to original position after pressing restart

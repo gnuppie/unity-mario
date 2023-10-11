@@ -15,7 +15,7 @@ public abstract class BasePowerup : MonoBehaviour, IPowerup
     protected virtual void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        startPosition = new Vector3(this.transform.localPosition.x, this.transform.localPosition.y, this.transform.localPosition.z);
+        startPosition = new Vector3(0.0f, 0.85f, 0.0f);
     }
 
     // interface methods
@@ -34,20 +34,26 @@ public abstract class BasePowerup : MonoBehaviour, IPowerup
         {
             return spawned;
         }
+        set
+        {
+            spawned = value;
+        }
     }
 
     public void DestroyPowerup()
     {
         Debug.Log("DestroyPowerup");
+        rigidBody.velocity = Vector3.zero;
         this.gameObject.SetActive(false);
         // Destroy(this.gameObject);
     }
 
-    public void GameRestart()
+    public virtual void GameRestart()
     {
-        Debug.Log("GameRestart called");
+        rigidBody.velocity = Vector3.zero;
         this.gameObject.SetActive(true);
         this.gameObject.transform.localPosition = startPosition;
+        this.gameObject.GetComponentInChildren<Animator>().SetTrigger("gameRestart");
 
     }
 

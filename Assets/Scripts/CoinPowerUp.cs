@@ -17,13 +17,24 @@ public class CoinPowerUp : BasePowerup
         // throw new System.NotImplementedException();
     }
 
-    public override void SpawnPowerup()
+    public override void GameRestart()
     {
-        // Play Sound
+        base.GameRestart();
+
+    }
+
+    public void playSound()
+    {
         AudioSource coinAudio = this.transform.GetComponent<AudioSource>();
         coinAudio.volume = UnityEngine.Random.Range(0.8f, 1.0f);
         coinAudio.pitch = UnityEngine.Random.Range(0.85f, 1.1f);
         coinAudio.PlayOneShot(coinAudio.clip);
+    }
+
+    public override void SpawnPowerup()
+    {
+        spawned = true;
+        playSound();
         GameManagerWeek3.instance.IncreaseScore(1);
     }
 }
