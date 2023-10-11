@@ -85,7 +85,6 @@ GameObject:
   - component: {fileID: 8952968506005291870}
   - component: {fileID: 710087933377821670}
   - component: {fileID: 217351454622223812}
-  - component: {fileID: 654574524319904885}
   m_Layer: 7
   m_Name: BrickCoin
   m_TagString: QuestionBox
@@ -226,20 +225,6 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!114 &654574524319904885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5571938653874581229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9308903723b5d52458368e396962b781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
-  spawned: 0
 --- !u!1 &5638183289945421543
 GameObject:
   m_ObjectHideFlags: 0

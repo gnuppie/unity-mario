@@ -3,11 +3,13 @@
 Lab for 50.033 Foundations of Game Development and Design
 Purpose is to familiarize with the Unity software and C# Language
 
-TODO:
-1. Setup the restart to reset all instances of powerups and powerup blocks
 
+TODO:
+
+Setup the restart to reset all instances of powerups and powerup blocks
 Known Bugs:
-1. Camera does not reset to original position after pressing restart
+
+Camera does not reset to original position after pressing restart
 
 
 Progress:

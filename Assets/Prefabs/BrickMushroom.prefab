@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8179264242176742772}
   - component: {fileID: 4920722459009193916}
   - component: {fileID: 4200680151060571679}
-  - component: {fileID: 5865128873355397189}
   m_Layer: 7
   m_Name: BrickMushroom
   m_TagString: QuestionBox
@@ -153,20 +152,6 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!114 &5865128873355397189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3433334009314508022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9308903723b5d52458368e396962b781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
-  spawned: 0
 --- !u!1 &4771849707862375957
 GameObject:
   m_ObjectHideFlags: 0

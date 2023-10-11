@@ -20,14 +20,23 @@ public class BlockManager : MonoBehaviour
 
     public void GameRestart()
     {
-        //reset Blocks
+
         foreach (Transform block in gameObject.transform)
         {
-            if (block.transform.gameObject.TryGetComponent<BlockCoinController>(out BlockCoinController coinController))
+            //reset Block Animators
+            block.transform.GetChild(0).gameObject.GetComponent<Animator>().SetTrigger("gameRestart");
+
+            // GameRestart() on BasePowerUp
+            if (block.transform.GetChild(2).gameObject.TryGetComponent<BasePowerup>(out BasePowerup powerup))
             {
-                coinController.ResetBlock();
+                if (powerup.powerupType == PowerupType.MagicMushroom)
+                {
+                    powerup.GameRestart();
+                }
             }
         }
+
+
     }
 
     void Awake()
