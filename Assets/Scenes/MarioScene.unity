@@ -444,7 +444,6 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
-  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -535,21 +534,6 @@ Skybox:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
---- !u!114 &519420034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df015b37b3c21c646ab6ba1087663e5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameConstants: {fileID: 11400000, guid: 0e8dab085b8aecc4e855577cb4044f29, type: 2}
-  player: {fileID: 1878195554}
-  endLimit: {fileID: 1892919350}
 --- !u!1 &592209373
 GameObject:
   m_ObjectHideFlags: 0
@@ -1720,6 +1704,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brick-2
       objectReference: {fileID: 0}
+    - target: {fileID: 8856202915892304618, guid: 625cb055fdd770c489649fd535c1c128, type: 3}
+      propertyPath: m_Mass
+      value: 0.48876482
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     m_RemovedGameObjects: []
@@ -2106,7 +2094,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1678720741}
-  - component: {fileID: 1678720740}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2114,33 +2101,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1678720740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1678720739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c882d23e18c5942ad953e8643a6730, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameStart:
-    m_PersistentCalls:
-      m_Calls: []
-  gameRestart:
-    m_PersistentCalls:
-      m_Calls: []
-  scoreChange:
-    m_PersistentCalls:
-      m_Calls: []
-  gameOver:
-    m_PersistentCalls:
-      m_Calls: []
-  gameScore: {fileID: 11400000, guid: 7855b2b2101430a4384af27a4007ea4a, type: 2}
-  unpaused: {fileID: 24500006, guid: 322297749b912ce4c9f93e7a21f4bda9, type: 2}
-  paused: {fileID: -8867602703676404904, guid: 322297749b912ce4c9f93e7a21f4bda9, type: 2}
 --- !u!4 &1678720741
 Transform:
   m_ObjectHideFlags: 0
@@ -2579,7 +2539,6 @@ GameObject:
   - component: {fileID: 1878195560}
   - component: {fileID: 1878195561}
   - component: {fileID: 1878195562}
-  - component: {fileID: 1878195555}
   m_Layer: 0
   m_Name: Mario
   m_TagString: Player
@@ -2654,30 +2613,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1878195555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878195551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e8ddcb6b0b122741a7f677a1c78ee53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameConstants: {fileID: 11400000, guid: 0e8dab085b8aecc4e855577cb4044f29, type: 2}
-  enemies: {fileID: 1192192614}
-  blocks: {fileID: 592209373}
-  marioAnimator: {fileID: 1878195559}
-  marioAudio: {fileID: 1878195560}
-  marioDeathAudio: {fileID: 1828736290}
-  gameCamera: {fileID: 519420032}
-  boxSize: {x: 0.5, y: 1, z: 0}
-  maxDistance: 0.5
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 264
 --- !u!50 &1878195556
 Rigidbody2D:
   serializedVersion: 4
@@ -2992,7 +2927,7 @@ MonoBehaviour:
   jump:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1878195555}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: Jump
         m_Mode: 1
@@ -3007,7 +2942,7 @@ MonoBehaviour:
   jumpHold:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1878195555}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: JumpHold
         m_Mode: 1
@@ -3022,7 +2957,7 @@ MonoBehaviour:
   moveCheck:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1878195555}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: MoveCheck
         m_Mode: 0
@@ -3247,6 +3182,10 @@ PrefabInstance:
     - target: {fileID: 5571938653874581229, guid: 625cb055fdd770c489649fd535c1c128, type: 3}
       propertyPath: m_Name
       value: Brick
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856202915892304618, guid: 625cb055fdd770c489649fd535c1c128, type: 3}
+      propertyPath: m_Mass
+      value: 0.48876482
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -3663,10 +3602,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 759826684}
   - {fileID: 1878195554}
   - {fileID: 600724071}
-  - {fileID: 1192192615}
   - {fileID: 1159193141}
+  - {fileID: 759826684}
+  - {fileID: 1192192615}
   - {fileID: 1155844062}
   - {fileID: 1678720741}

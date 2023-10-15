@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 // later on, teach interface
-public class RestartButtonController : MonoBehaviour, IInteractiveButton
+public class RestartButtonControllerWeek4 : MonoBehaviour, IInteractiveButtonWeek4
 {
     // implements the interface
     public PauseButtonController pbc;
