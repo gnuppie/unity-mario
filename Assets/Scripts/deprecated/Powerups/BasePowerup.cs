@@ -1,9 +1,9 @@
 using UnityEngine;
 
 
-public abstract class BasePowerup : MonoBehaviour, IPowerup
+public abstract class BasePowerupWeek4 : MonoBehaviour, IPowerupWeek4
 {
-    public PowerupType type;
+    public PowerupTypeWeek4 type;
     public bool spawned = false;
     protected bool consumed = false;
     protected bool goRight = true;
@@ -20,7 +20,7 @@ public abstract class BasePowerup : MonoBehaviour, IPowerup
 
     // interface methods
     // 1. concrete methods
-    public PowerupType powerupType
+    public PowerupTypeWeek4 powerupType
     {
         get // getter
         {

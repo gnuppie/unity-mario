@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CoinPowerUp : BasePowerup
 {
@@ -37,4 +38,7 @@ public class CoinPowerUp : BasePowerup
         playSound();
         GameManagerWeek3.instance.IncreaseScore(1);
     }
+
+
+
 }

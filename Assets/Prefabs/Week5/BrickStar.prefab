@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 363449306262179159}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.9293666, y: -3, z: 0.08836643}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 7028411180873943040}
   - component: {fileID: 2864036479870315435}
   - component: {fileID: 2359007605755989236}
+  - component: {fileID: 7302424004908024124}
   m_Layer: 10
   m_Name: Powerup
   m_TagString: Untagged
@@ -397,6 +398,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7302424004908024124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050241203801511835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f681520c1344a4d84ce7504f1f7dd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  spawned: 0
+  powerupCollected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 57aef93ea491ecb45b26bea88a5b0812, type: 2}
+        m_TargetAssemblyTypeName: GameEvent`1[[IPowerup, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6149394696591014056
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,6 +441,8 @@ GameObject:
   - component: {fileID: 1628365320947117342}
   - component: {fileID: 4162439113985945890}
   - component: {fileID: 5366199607061164176}
+  - component: {fileID: 2900011914563201964}
+  - component: {fileID: 3676383964315853055}
   m_Layer: 7
   m_Name: Brick
   m_TagString: Untagged
@@ -599,6 +631,61 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2900011914563201964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6149394696591014056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b055abb08a8240548bacf0dda4cccd5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerupAnimator: {fileID: 5366199607061164176}
+  powerup: {fileID: 7302424004908024124}
+  isBreakable: 0
+--- !u!114 &3676383964315853055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6149394696591014056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8aa77ead7c1c504990e0c7a4ee38bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 10745d5a134b39b488017ceb5f6f6440, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2900011914563201964}
+        m_TargetAssemblyTypeName: BrickPowerupController, Assembly-CSharp
+        m_MethodName: GameRestart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7302424004908024124}
+        m_TargetAssemblyTypeName: StarPowerup, Assembly-CSharp
+        m_MethodName: GameRestart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6323347411775524015
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,7 +770,7 @@ GameObject:
   - component: {fileID: 6631544908008291821}
   - component: {fileID: 16038886498202660}
   - component: {fileID: 2874138828663546381}
-  - component: {fileID: 3062648177262790506}
+  - component: {fileID: 5897133003896781604}
   m_Layer: 10
   m_Name: Star
   m_TagString: Untagged
@@ -779,7 +866,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3062648177262790506
+--- !u!114 &5897133003896781604
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -796,12 +883,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MagicMushroomPowerup, Assembly-CSharp
-        m_MethodName: SpawnPowerup
-        m_Mode: 1
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

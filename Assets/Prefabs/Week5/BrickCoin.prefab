@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 268231429151502655}
   - component: {fileID: 1057654921157497974}
   - component: {fileID: 1379525057151579728}
-  - component: {fileID: 8276408634498770931}
+  - component: {fileID: 6997763194362046023}
   m_Layer: 10
   m_Name: Coin
   m_TagString: Untagged
@@ -332,7 +332,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8276408634498770931
+--- !u!114 &6997763194362046023
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -349,12 +349,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CoinPowerUp, Assembly-CSharp
-        m_MethodName: SpawnPowerup
-        m_Mode: 1
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -372,6 +372,7 @@ GameObject:
   - component: {fileID: 4292630434591112479}
   - component: {fileID: 8087481665012232068}
   - component: {fileID: 3890054915786797448}
+  - component: {fileID: 2115715137620506175}
   m_Layer: 10
   m_Name: Powerup
   m_TagString: Untagged
@@ -559,6 +560,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2115715137620506175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6873707645247608888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9320967a4523b1444ba769a95519cefb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  spawned: 0
+  powerupCollected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 57aef93ea491ecb45b26bea88a5b0812, type: 2}
+        m_TargetAssemblyTypeName: GameEvent`1[[IPowerup, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8785162628021740370
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,6 +603,8 @@ GameObject:
   - component: {fileID: 8856202915892304618}
   - component: {fileID: 7487104866829503569}
   - component: {fileID: 1947058659057453232}
+  - component: {fileID: 3587304629058391436}
+  - component: {fileID: 32880665065477340}
   m_Layer: 7
   m_Name: Brick
   m_TagString: Untagged
@@ -761,3 +793,58 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3587304629058391436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8785162628021740370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b055abb08a8240548bacf0dda4cccd5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerupAnimator: {fileID: 1379525057151579728}
+  powerup: {fileID: 2115715137620506175}
+  isBreakable: 0
+--- !u!114 &32880665065477340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8785162628021740370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8aa77ead7c1c504990e0c7a4ee38bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 10745d5a134b39b488017ceb5f6f6440, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3587304629058391436}
+        m_TargetAssemblyTypeName: BrickPowerupController, Assembly-CSharp
+        m_MethodName: GameRestart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2115715137620506175}
+        m_TargetAssemblyTypeName: CoinPowerUp, Assembly-CSharp
+        m_MethodName: GameRestart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

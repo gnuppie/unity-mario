@@ -576,7 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbbe40eb6ffba76479675183fa4a3cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameConstants: {fileID: 0}
+  gameConstants: {fileID: 11400000, guid: 0e8dab085b8aecc4e855577cb4044f29, type: 2}
   endLimit: {fileID: 1892919350}
 --- !u!1 &592209373
 GameObject:
@@ -2586,6 +2586,7 @@ GameObject:
   - component: {fileID: 1878195565}
   - component: {fileID: 1878195564}
   - component: {fileID: 1878195563}
+  - component: {fileID: 1878195566}
   m_Layer: 0
   m_Name: Mario
   m_TagString: Player
@@ -3056,10 +3057,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf87e3b10713d3240ae5cacccf9e2931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 0}
+  Event: {fileID: 11400000, guid: bafafc42c9deb934495bc81f04e7a400, type: 2}
   Response:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1878195565}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: RequestPowerupEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1878195565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3090,6 +3103,34 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: GameEvent`1[[UnityEngine.Object, UnityEngine
         m_MethodName: Raise
         m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1878195566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878195551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8aa77ead7c1c504990e0c7a4ee38bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 36b4adaad9600d340a00a628b6ca47f6, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1878195565}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: DamageMario
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3312,12 +3353,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brick
       objectReference: {fileID: 0}
-    - target: {fileID: 8856202915892304618, guid: 625cb055fdd770c489649fd535c1c128, type: 3}
-      propertyPath: m_Mass
-      value: 0.48876482
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3488,11 +3524,156 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3062648177262790506, guid: 3d7b3f0f484a63248b2ced3bbde77035, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6149394696591014056, guid: 3d7b3f0f484a63248b2ced3bbde77035, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2053938561824250015}
+    - targetCorrespondingSourceObject: {fileID: 6149394696591014056, guid: 3d7b3f0f484a63248b2ced3bbde77035, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2053938561824250014}
+    - targetCorrespondingSourceObject: {fileID: 2050241203801511835, guid: 3d7b3f0f484a63248b2ced3bbde77035, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2053938561824250013}
+    - targetCorrespondingSourceObject: {fileID: 7221441289776786121, guid: 3d7b3f0f484a63248b2ced3bbde77035, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2053938561824250012}
   m_SourcePrefab: {fileID: 100100000, guid: 3d7b3f0f484a63248b2ced3bbde77035, type: 3}
+--- !u!1 &2053938561824250008 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7221441289776786121, guid: 3d7b3f0f484a63248b2ced3bbde77035, type: 3}
+  m_PrefabInstance: {fileID: 2053938561824250007}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2053938561824250009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2050241203801511835, guid: 3d7b3f0f484a63248b2ced3bbde77035, type: 3}
+  m_PrefabInstance: {fileID: 2053938561824250007}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2053938561824250010 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6149394696591014056, guid: 3d7b3f0f484a63248b2ced3bbde77035, type: 3}
+  m_PrefabInstance: {fileID: 2053938561824250007}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2053938561824250011 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5366199607061164176, guid: 3d7b3f0f484a63248b2ced3bbde77035, type: 3}
+  m_PrefabInstance: {fileID: 2053938561824250007}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2053938561824250012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053938561824250008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cc5aaec82ef41645ad6279fdb14e687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameter: 0
+  useInt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2053938561824250013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053938561824250009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f681520c1344a4d84ce7504f1f7dd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  spawned: 0
+  powerupCollected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 57aef93ea491ecb45b26bea88a5b0812, type: 2}
+        m_TargetAssemblyTypeName: GameEvent`1[[IPowerup, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2053938561824250014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053938561824250010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8aa77ead7c1c504990e0c7a4ee38bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 10745d5a134b39b488017ceb5f6f6440, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2053938561824250015}
+        m_TargetAssemblyTypeName: BrickPowerupController, Assembly-CSharp
+        m_MethodName: GameRestart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2053938561824250013}
+        m_TargetAssemblyTypeName: StarPowerup, Assembly-CSharp
+        m_MethodName: GameRestart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2053938561824250015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053938561824250010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b055abb08a8240548bacf0dda4cccd5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerupAnimator: {fileID: 2053938561824250011}
+  powerup: {fileID: 2053938561824250013}
+  isBreakable: 0
 --- !u!1001 &2459367576192869014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3582,13 +3763,13 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2459367576192869015}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 2459367576192869018}
+        m_TargetAssemblyTypeName: EnemyController, Assembly-CSharp
+        m_MethodName: GameRestart
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

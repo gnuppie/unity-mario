@@ -261,5 +261,14 @@ public class PlayerController : MonoBehaviour
         onGameOver.Invoke();
     }
 
+    public void RequestPowerupEffect()
+    {
+
+    }
+
+    public void DamageMario()
+    {
+
+    }
 
 }

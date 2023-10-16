@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestionBoxPowerupController : MonoBehaviour, IPowerupController
+public class QuestionBoxPowerupControllerWeek4 : MonoBehaviour, IPowerupControllerWeek4
 {
     public Animator powerupAnimator;
-    public BasePowerup powerup; // reference to this question box's powerup
+    public BasePowerupWeek4 powerup; // reference to this question box's powerup
 
     void Start()
     {
@@ -27,7 +27,7 @@ public class QuestionBoxPowerupController : MonoBehaviour, IPowerupController
             this.GetComponent<Animator>().SetTrigger("spawned");
 
             // activate box collider on anything else besides a coin
-            if (powerup.powerupType != PowerupType.Coin)
+            if (powerup.powerupType != PowerupTypeWeek4.Coin)
             {
                 this.transform.parent.GetChild(2).GetComponent<BoxCollider2D>().enabled = true;
 

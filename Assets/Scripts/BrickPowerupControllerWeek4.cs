@@ -79,4 +79,18 @@ public class BrickPowerupController : MonoBehaviour, IPowerupController
     {
 
     }
+
+    public void GameRestart()
+    {
+        // reset Block Animator
+        this.GetComponent<Animator>().SetTrigger("gameRestart");
+
+        // reset bounciness of block
+        if (this.TryGetComponent<Rigidbody2D>(out Rigidbody2D rigidBody))
+        {
+            rigidBody.bodyType = RigidbodyType2D.Dynamic;
+        }
+
+
+    }
 }
