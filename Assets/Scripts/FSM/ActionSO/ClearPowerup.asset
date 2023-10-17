@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6cd11647f7a9c24c91dd80273c85cb3, type: 3}
+  m_Script: {fileID: 11500000, guid: 201b32d992b6ad44cbd677f1da232146, type: 3}
   m_Name: ClearPowerup
   m_EditorClassIdentifier: 

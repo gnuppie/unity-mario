@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5d52bb7f3c8de542802b4fafafd580a, type: 3}
+  m_Script: {fileID: 11500000, guid: af0f9ebd858761149ada778c467ba7f2, type: 3}
   m_Name: SetupInvincibility
   m_EditorClassIdentifier: 
-  invincibilityStart: {fileID: 8300000, guid: fe80c79237cc34e99babbc6d54016d93, type: 3}
+  invincibilityStart: {fileID: 8300000, guid: b520e6b32619c490a934225b9b162dc2, type: 3}

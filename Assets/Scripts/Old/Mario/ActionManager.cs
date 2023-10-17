@@ -50,9 +50,9 @@ public class ActionManager : MonoBehaviour
         }
     }
 
-    public void OnFireAction(InputAction.CallbackContext context)
+    public void onFire(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.started)
         {
             fire.Invoke();
         }
@@ -91,6 +91,6 @@ public class ActionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }

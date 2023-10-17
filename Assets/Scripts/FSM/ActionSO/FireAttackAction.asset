@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5803767af16f7ec438c3869f9fd3998c, type: 3}
+  m_Script: {fileID: 11500000, guid: a74cfa0203a767340b41dd52de2b88af, type: 3}
   m_Name: FireAttackAction
   m_EditorClassIdentifier: 
   maxPrefabInScene: 3
   impulseForce: 1
   degree: 45
-  attackPrefab: {fileID: 2988346217082691222, guid: 9e4161b09ad243d4992e47a4aa19fc10, type: 3}
-  marioFaceRight: {fileID: 11400000, guid: 851154e13cbd9b24496b3e703dcd0616, type: 2}
+  attackPrefab: {fileID: 197672430177638347, guid: 9e4161b09ad243d4992e47a4aa19fc10, type: 3}
+  marioFaceRight: {fileID: 11400000, guid: 3a4d3d3e39185e84ca8339123c901567, type: 2}

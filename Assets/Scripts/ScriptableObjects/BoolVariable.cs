@@ -1,15 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BoolVariable", menuName = "ScriptableObjects/BoolVariable", order = 2)]
+[CreateAssetMenu(fileName = "BoolVariable", menuName = "ScriptableObjects/BoolVariable", order = 6)]
 public class BoolVariable : Variable<bool>
 {
-
     public override void SetValue(bool value)
     {
         _value = value;
     }
 
-    // overload
     public void SetValue(BoolVariable value)
     {
         SetValue(value.value);
@@ -19,5 +20,4 @@ public class BoolVariable : Variable<bool>
     {
         _value = !_value;
     }
-
 }

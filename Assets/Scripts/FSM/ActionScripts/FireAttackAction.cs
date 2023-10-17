@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "PluggableSM/Actions/FireAttack")]
@@ -7,30 +10,29 @@ public class FireAttackAction : Action
     public float impulseForce = 1;
     public float degree = 45;
     public GameObject attackPrefab;
-    // a scriptable object updated by PlayerMovement / PlayerController to store current Mario's facing
-    public BoolVariable marioFaceRight;
+    public BoolVariable marioFaceRight; // A scriptable object updated by PlayerMovement / PlayerController to store current Mario's facing
 
     public override void Act(StateController controller)
     {
         GameObject[] instantiatedPrefabsInScene = GameObject.FindGameObjectsWithTag(attackPrefab.tag);
         if (instantiatedPrefabsInScene.Length < maxPrefabInScene)
         {
-            // instantiate it where controller (mario) is
+            // Instantiate it where controller (Mario) is
             GameObject x = Instantiate(attackPrefab, controller.transform.position, Quaternion.identity);
 
-            // Get the Rigidbody component of the instantiated object
+            // Get the Rigidbody of the instantiated object
             Rigidbody2D rb = x.GetComponent<Rigidbody2D>();
+
             // Check if the Rigidbody component exists
             if (rb != null)
             {
-                // compute direction vector
+                // Computer Direction Vector
                 Vector2 direction = CalculateDirection(degree, marioFaceRight.value);
+
                 // Apply a rightward impulse force to the object
                 rb.AddForce(direction * impulseForce, ForceMode2D.Impulse);
             }
-
         }
-
     }
 
     public Vector2 CalculateDirection(float degrees, bool isFacingRight)
@@ -38,7 +40,7 @@ public class FireAttackAction : Action
         // Convert degrees to radians
         float radians = degrees * Mathf.Deg2Rad;
 
-        // Calculate the direction vector
+        // Calculate the Direction Vector
         float x = Mathf.Cos(radians);
         float y = Mathf.Sin(radians);
 

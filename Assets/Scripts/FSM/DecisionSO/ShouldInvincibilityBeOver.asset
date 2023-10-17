@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94ca4938b37f462468006ef62e009dbd, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bb37bfd2aac38b4d9f583cbc5a0563f, type: 3}
   m_Name: ShouldInvincibilityBeOver
   m_EditorClassIdentifier: 
-  buffDuration: 2
+  buffDuration: 3

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c920a1c15ad2c54cb8b139ec0cefefb, type: 3}
   m_Name: DeadMario
   m_EditorClassIdentifier: 
-  setupActions: []
+  setupActions:
+  - {fileID: 11400000, guid: c7c8970549c8d6b4a8ea533af3902998, type: 2}
   actions: []
   eventTriggeredActions: []
   exitActions: []

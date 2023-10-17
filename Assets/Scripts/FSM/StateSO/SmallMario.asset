@@ -13,13 +13,16 @@ MonoBehaviour:
   m_Name: SmallMario
   m_EditorClassIdentifier: 
   setupActions:
-  - {fileID: 11400000, guid: ecf610b1493be5d42abae31cc3f5ef12, type: 2}
-  - {fileID: 11400000, guid: 6541996fb7137c3498e263c038fd61ce, type: 2}
+  - {fileID: 11400000, guid: 6026d4a873bc75649a75e9dca73ba568, type: 2}
+  - {fileID: 11400000, guid: c2d64ed11fd590c4fb21eff8af1c5f16, type: 2}
   actions: []
   eventTriggeredActions: []
   exitActions: []
   transitions:
-  - decision: {fileID: 11400000, guid: 87f33bb0f8b5a0b4d9ca1cf7c18eb4e0, type: 2}
-    trueState: {fileID: 11400000, guid: 59ed6acc245981443a45270bfa01778d, type: 2}
-    falseState: {fileID: 11400000, guid: 7d22555ab4eaf9e4ebbbf2a513bbcb84, type: 2}
+  - decision: {fileID: 11400000, guid: 5e4c51c017ed34c4b9239b4e8460ba77, type: 2}
+    trueState: {fileID: 11400000, guid: 01c27b9dda58e4f40b0e567d825ad372, type: 2}
+    falseState: {fileID: 11400000, guid: 9175174b4856f954e9c71e6a69d496e7, type: 2}
+  - decision: {fileID: 11400000, guid: 80a863853fc81724c81e8ccf64c943bb, type: 2}
+    trueState: {fileID: 11400000, guid: 39b96d6c09a9e1546b076246fea206cd, type: 2}
+    falseState: {fileID: 11400000, guid: 9175174b4856f954e9c71e6a69d496e7, type: 2}
   sceneGizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

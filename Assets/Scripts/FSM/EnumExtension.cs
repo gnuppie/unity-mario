@@ -1,4 +1,3 @@
-// This is a custom class to easily convert between the string or integer representation of an enum to the enum:
 using System;
 
 public static class EnumExtension

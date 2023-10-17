@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 
 public class FireballController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [SerializeField] private float scaleSpeed = 1.0f;
 
+    [SerializeField] private float scaleSpeed = 1.0f;
+    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(ScaleAndDestroyCoroutine());
@@ -16,8 +15,7 @@ public class FireballController : MonoBehaviour
 
     private IEnumerator ScaleAndDestroyCoroutine()
     {
-        // Wait for 2 seconds
-        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSecondsRealtime(2); // Wait for 2 seconds
         // Gradually scale down the GameObject
         while (transform.localScale.x > 0.01f)
         {
@@ -28,7 +26,7 @@ public class FireballController : MonoBehaviour
         // Ensure the GameObject is completely scaled down
         transform.localScale = Vector3.zero;
 
-        // Destroy the GameObject
+        // Destroy GameObject
         Destroy(gameObject);
     }
 
@@ -36,7 +34,7 @@ public class FireballController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            // destroy self
+            // Destroy self
             Destroy(gameObject);
         }
     }

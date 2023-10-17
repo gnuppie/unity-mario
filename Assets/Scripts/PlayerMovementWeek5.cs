@@ -7,9 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovementWeek5 : MonoBehaviour
 {
-    public BoolVariable marioFaceRight;
     public GameConstants gameConstants;
+    public BoolVariable faceRightState;
     public UnityEvent incrementScore;
+    public UnityEvent takeDamage;
 
     // Movement
     float speed;
@@ -23,7 +24,7 @@ public class PlayerMovementWeek5 : MonoBehaviour
     private Vector3 spawnLocation;
     // public Vector3 cameraSpawnLocation;
     public bool onGroundState = true;
-    private bool faceRightState = true;
+    // private bool faceRightState = true;
     [System.NonSerialized]
     public bool alive = true;   // To prevent recollision with Goomba
 
@@ -41,7 +42,8 @@ public class PlayerMovementWeek5 : MonoBehaviour
         maxSpeed = gameConstants.maxSpeed;
         upSpeed = gameConstants.upSpeed;
         deathImpulse = gameConstants.deathImpulse;
-        spawnLocation = gameConstants.spawnLocations[int.Parse(SceneManager.GetActiveScene().name.Substring(SceneManager.GetActiveScene().name.Length - 1)) - 1];
+        faceRightState.value = true;
+        spawnLocation = gameConstants.spawnLocations[int.Parse(SceneManager.GetActiveScene().name.Substring(SceneManager.GetActiveScene().name.Length-1)) - 1];
 
         Application.targetFrameRate = 30;
         marioBody = GetComponent<Rigidbody2D>();
@@ -92,7 +94,7 @@ public class PlayerMovementWeek5 : MonoBehaviour
         {
             jumpState = true;
         }
-
+        
     }
 
     public void JumpStop()
@@ -103,20 +105,20 @@ public class PlayerMovementWeek5 : MonoBehaviour
     void FlipMarioSprite(int value)
     {
         // Switching sprite direction
-        if (value == -1 && faceRightState)
+        if (value == -1 && faceRightState.value)
         {
-            updateMarioShouldFaceRight(false);
-            marioSprite.flipX = !faceRightState;
+            faceRightState.value = false;
+            marioSprite.flipX = true;
             if (marioBody.velocity.x > 2.0f)    // If Mario is turning right abruptly
             {
                 marioAnimator.SetTrigger("onSkid"); // Update animator
             }
         }
 
-        else if (value == 1 && !faceRightState)
+        else if (value == 1 && !faceRightState.value)
         {
-            updateMarioShouldFaceRight(true);
-            marioSprite.flipX = !faceRightState;
+            faceRightState.value = true;
+            marioSprite.flipX = false;
             if (marioBody.velocity.x < -2.0f)   // If Mario is turning left abruptly
             {
                 marioAnimator.SetTrigger("onSkid"); // Update animator
@@ -124,15 +126,9 @@ public class PlayerMovementWeek5 : MonoBehaviour
         }
     }
 
-    private void updateMarioShouldFaceRight(bool value)
-    {
-        faceRightState = value;
-        marioFaceRight.SetValue(faceRightState);
-    }
-
     private void fallingCheck()
     {
-        if (!Physics2D.BoxCast(transform.position, new Vector2(0.88f, 1.0f), 0, -transform.up, 0.5f, collisionLayerMask) && onGroundState)
+        if (!Physics2D.BoxCast(transform.position, new Vector2(0.88f ,1.0f), 0, -transform.up, 0.5f, collisionLayerMask) && onGroundState)
         {
             onGroundState = false;
             marioAnimator.SetBool("falling", true);   // Update animator
@@ -171,24 +167,29 @@ public class PlayerMovementWeek5 : MonoBehaviour
         else if (collision.gameObject.CompareTag("Enemy") && alive)
         {
             // Play death animation
-            marioAnimator.Play("mario-die");
-            alive = false;
+            takeDamage.Invoke();
         }
     }
 
     public void DeathImpulse()
     {
         marioBody.AddForce(Vector2.up * deathImpulse, ForceMode2D.Impulse);
+        alive = false;
+    }
+
+    public void DamageMario()
+    {
+        GetComponentInChildren<MarioStateController>().SetPowerup(PowerupType.Damage);
     }
 
 
     // FixedUpdate is used for Physics Logic
     void FixedUpdate()
     {
-        // Control Mario's Movements
-        if (alive && moving)
+    // Control Mario's Movements
+        if(alive && moving)
         {
-            Move(faceRightState == true ? 1 : -1);
+            Move(faceRightState.value == true ? 1 : -1);
         }
         if (jumpState)
         {
@@ -199,8 +200,9 @@ public class PlayerMovementWeek5 : MonoBehaviour
     // GameOver and GameRestarts
     public void GameRestart()
     {
+        GetComponentInChildren<MarioStateController>().GameRestart();
         marioBody.transform.position = spawnLocation;    // Reset Mario Position
-        faceRightState = true;  // Reset Sprite Direction
+        faceRightState.value = true;  // Reset Sprite Direction
         marioSprite.flipX = false;  // Reset Sprite Direction
         marioAnimator.SetTrigger("gameRestart");    // Reset Animation
         alive = true;
