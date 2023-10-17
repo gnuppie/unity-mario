@@ -22,4 +22,4 @@ MonoBehaviour:
   - {x: -6.37, y: -2.4, z: 0}
   goombaPatrolTime: 2
   goombaMaxOffset: 5
-  flickerInterval: 0.5
+  flickerInterval: 1
