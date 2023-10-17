@@ -4123,6 +4123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 293d26bb7955fc1468458725e101a301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marioFaceRight: {fileID: 11400000, guid: 851154e13cbd9b24496b3e703dcd0616, type: 2}
   gameConstants: {fileID: 11400000, guid: 5d463b2e83159eb46890f8e9689ce9e9, type: 2}
   incrementScore:
     m_PersistentCalls:

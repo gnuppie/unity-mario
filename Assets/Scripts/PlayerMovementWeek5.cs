@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovementWeek5 : MonoBehaviour
 {
+    public BoolVariable marioFaceRight;
     public GameConstants gameConstants;
     public UnityEvent incrementScore;
 
@@ -40,7 +41,7 @@ public class PlayerMovementWeek5 : MonoBehaviour
         maxSpeed = gameConstants.maxSpeed;
         upSpeed = gameConstants.upSpeed;
         deathImpulse = gameConstants.deathImpulse;
-        spawnLocation = gameConstants.spawnLocations[int.Parse(SceneManager.GetActiveScene().name.Substring(SceneManager.GetActiveScene().name.Length-1)) - 1];
+        spawnLocation = gameConstants.spawnLocations[int.Parse(SceneManager.GetActiveScene().name.Substring(SceneManager.GetActiveScene().name.Length - 1)) - 1];
 
         Application.targetFrameRate = 30;
         marioBody = GetComponent<Rigidbody2D>();
@@ -91,7 +92,7 @@ public class PlayerMovementWeek5 : MonoBehaviour
         {
             jumpState = true;
         }
-        
+
     }
 
     public void JumpStop()
@@ -104,8 +105,8 @@ public class PlayerMovementWeek5 : MonoBehaviour
         // Switching sprite direction
         if (value == -1 && faceRightState)
         {
-            faceRightState = false;
-            marioSprite.flipX = true;
+            updateMarioShouldFaceRight(false);
+            marioSprite.flipX = !faceRightState;
             if (marioBody.velocity.x > 2.0f)    // If Mario is turning right abruptly
             {
                 marioAnimator.SetTrigger("onSkid"); // Update animator
@@ -114,8 +115,8 @@ public class PlayerMovementWeek5 : MonoBehaviour
 
         else if (value == 1 && !faceRightState)
         {
-            faceRightState = true;
-            marioSprite.flipX = false;
+            updateMarioShouldFaceRight(true);
+            marioSprite.flipX = !faceRightState;
             if (marioBody.velocity.x < -2.0f)   // If Mario is turning left abruptly
             {
                 marioAnimator.SetTrigger("onSkid"); // Update animator
@@ -123,9 +124,15 @@ public class PlayerMovementWeek5 : MonoBehaviour
         }
     }
 
+    private void updateMarioShouldFaceRight(bool value)
+    {
+        faceRightState = value;
+        marioFaceRight.SetValue(faceRightState);
+    }
+
     private void fallingCheck()
     {
-        if (!Physics2D.BoxCast(transform.position, new Vector2(0.88f ,1.0f), 0, -transform.up, 0.5f, collisionLayerMask) && onGroundState)
+        if (!Physics2D.BoxCast(transform.position, new Vector2(0.88f, 1.0f), 0, -transform.up, 0.5f, collisionLayerMask) && onGroundState)
         {
             onGroundState = false;
             marioAnimator.SetBool("falling", true);   // Update animator
@@ -178,8 +185,8 @@ public class PlayerMovementWeek5 : MonoBehaviour
     // FixedUpdate is used for Physics Logic
     void FixedUpdate()
     {
-    // Control Mario's Movements
-        if(alive && moving)
+        // Control Mario's Movements
+        if (alive && moving)
         {
             Move(faceRightState == true ? 1 : -1);
         }
