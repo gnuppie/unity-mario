@@ -6,8 +6,8 @@ TagManager:
   tags:
   - Ground
   - Enemy
-  - QuestionBox
-  - Stomp
+  - Coin
+  - Question Block
   layers:
   - Default
   - TransparentFX
@@ -18,9 +18,9 @@ TagManager:
   - Enemies
   - Obstacles
   - Roof
-  - interactive
-  - Powerups
-  - 
+  - Stomp
+  - Interactive
+  - Powerup
   - 
   - 
   - 
@@ -44,4 +44,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Castle
+    uniqueID: 2806609481
     locked: 0

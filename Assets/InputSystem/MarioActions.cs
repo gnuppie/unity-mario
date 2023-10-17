@@ -25,12 +25,12 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
     ""maps"": [
         {
             ""name"": ""gameplay"",
-            ""id"": ""629ed17b-6b70-4ddc-82af-3378d7695343"",
+            ""id"": ""b3eb058c-8231-43b2-866c-c2aaa61a3d2a"",
             ""actions"": [
                 {
                     ""name"": ""move"",
                     ""type"": ""Value"",
-                    ""id"": ""6d9ad013-2fd8-4a7d-9834-aecc3129d232"",
+                    ""id"": ""eea530e0-7f8c-4396-be7f-14b79a36396f"",
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -39,25 +39,25 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""jump"",
                     ""type"": ""Button"",
-                    ""id"": ""e7b0e124-6797-4a10-b7c5-d8081f1eabba"",
+                    ""id"": ""70ec6bda-cbce-4131-ad33-84e743a3bca9"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""jumphold"",
                     ""type"": ""Button"",
-                    ""id"": ""8ba0399c-58ff-4815-8548-7eda1b632395"",
+                    ""id"": ""a7282562-34ff-4293-b7b4-a15d039f62f0"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Hold"",
+                    ""interactions"": ""Hold(duration=0.3)"",
                     ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""click"",
                     ""type"": ""Button"",
-                    ""id"": ""8324be2c-9a44-449b-b276-3da0a6b8f459"",
+                    ""id"": ""64437c9c-5850-4e88-9e8e-a745b54b84cf"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -66,7 +66,7 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""point"",
                     ""type"": ""Value"",
-                    ""id"": ""6c4f7d44-ddd2-455f-ab68-abcf109c2577"",
+                    ""id"": ""80d76566-48e3-4789-8a97-7173c8049f8c"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -76,7 +76,7 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": ""1D Axis"",
-                    ""id"": ""9ce17f58-43cb-442f-b7b9-3ecc72144594"",
+                    ""id"": ""4b1d7480-3a51-488f-a05a-be0ce01b6489"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -87,7 +87,7 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""negative"",
-                    ""id"": ""86205c9d-bedb-4921-8f91-ddcf2a8ef4c5"",
+                    ""id"": ""28b002a6-5147-4a5c-a272-1d75f7c209af"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -98,7 +98,7 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""positive"",
-                    ""id"": ""3ad7a4de-237a-47a9-b9b0-61368eb7f2ff"",
+                    ""id"": ""5176c87b-d424-4ae2-abe4-50676ff25e26"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -108,30 +108,63 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""493f155d-8c86-465e-9951-be469fe84a3e"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""3f4c2818-aaeb-406a-b19c-3079ce922d3f"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""471db2b5-ef03-43ae-a50b-6c25f21a84f6"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
-                    ""id"": ""8c0a25f6-85d2-4843-a646-a046a258b86b"",
+                    ""id"": ""9c0f79c8-996e-4c9f-8496-ab53fa4438ca"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
-                    ""groups"": ""SuperMarioBros"",
+                    ""groups"": """",
                     ""action"": ""jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""12731454-ff98-4e91-a8cc-9366cb181c1c"",
+                    ""id"": ""1bf90c53-c9ad-4c9f-ad32-b3c49d7c5d02"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""SuperMarioBros"",
+                    ""groups"": """",
                     ""action"": ""jumphold"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""5d562f48-a1f6-4e35-b7f4-b57bde344e57"",
+                    ""id"": ""a90fd2ba-5567-4a8d-a265-69ba1825c0fd"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -142,7 +175,7 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""One Modifier"",
-                    ""id"": ""70860b6b-b743-4d2b-bc0e-a7e7f644f00c"",
+                    ""id"": ""3a8aac50-f137-4254-889f-036b838541cb"",
                     ""path"": ""OneModifier"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -153,7 +186,7 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""modifier"",
-                    ""id"": ""689f567f-6563-4743-91f8-41f43c319bc6"",
+                    ""id"": ""417b6347-c5d7-4673-9859-f7060a474746"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -164,7 +197,7 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""binding"",
-                    ""id"": ""4b36a784-245a-4102-88c5-fea7102b4323"",
+                    ""id"": ""d53a49bf-d3d0-442c-b8ac-ec158586515d"",
                     ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -183,7 +216,7 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
             ""devices"": [
                 {
                     ""devicePath"": ""<Keyboard>"",
-                    ""isOptional"": false,
+                    ""isOptional"": true,
                     ""isOR"": false
                 },
                 {

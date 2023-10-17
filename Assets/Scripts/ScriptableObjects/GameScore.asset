@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb4552b3568741c47b1463eb202f9483, type: 3}
+  m_Script: {fileID: 11500000, guid: d7f089996e1cd064c831a7f698a023c1, type: 3}
   m_Name: GameScore
   m_EditorClassIdentifier: 
-  DeveloperDescription: 
-  previousHighestValue: 0
+  DeveloperDescription: This object holds current game score
+  previousHighestValue: 9

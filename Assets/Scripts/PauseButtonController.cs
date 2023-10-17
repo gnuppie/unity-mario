@@ -1,30 +1,23 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class PauseButtonController : MonoBehaviour, IInteractiveButton
+public class PauseButtonController : MonoBehaviour
 {
-    [System.NonSerialized]
-    public bool isPaused = false;
+    public UnityEvent gamePause;
+    public UnityEvent gameResume;
+
     public Sprite pauseIcon;
     public Sprite playIcon;
+    private Image image;
 
-    [System.NonSerialized]
-    public Image image;
-    public HUDManager hud;
-    // Start is called before the first frame update
+    private bool isPaused = false;
+    
     void Start()
     {
         image = GetComponent<Image>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void ButtonClick()
@@ -32,23 +25,20 @@ public class PauseButtonController : MonoBehaviour, IInteractiveButton
         Time.timeScale = isPaused ? 1.0f : 0.0f;
         isPaused = !isPaused;
         if (isPaused)
-        {
-            image.sprite = playIcon;
-        }
+            gamePause.Invoke();
         else
-        {
-            image.sprite = pauseIcon;
-        }
-        GameManagerWeek3.instance.Lowpass();
-        hud.PausePlay();
+            gameResume.Invoke();
     }
 
-
-    public void ReturnToMain()
+    public void Pause()
     {
-        Time.timeScale = 1.0f;
-        GameManagerWeek3.instance.Lowpass();
-        SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Single);
+        image.sprite = playIcon;
+        GetComponentInParent<AudioSource>().Pause();
+    }
 
+    public void Resume()
+    {
+        image.sprite = pauseIcon;
+        GetComponentInParent<AudioSource>().UnPause();
     }
 }
