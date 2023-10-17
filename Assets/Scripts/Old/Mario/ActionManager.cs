@@ -11,6 +11,7 @@ public class ActionManager : MonoBehaviour
     public UnityEvent jumpHold;
     public UnityEvent jumpStop;
     public UnityEvent<int> moveCheck;
+    public UnityEvent fire;
 
     public void OnJumpHoldAction(InputAction.CallbackContext context)
     {
@@ -49,6 +50,14 @@ public class ActionManager : MonoBehaviour
         }
     }
 
+    public void OnFireAction(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            fire.Invoke();
+        }
+    }
+
     // public void OnClickAction(InputAction.CallbackContext context)
     // {
     //     if (context.started)
@@ -82,6 +91,6 @@ public class ActionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

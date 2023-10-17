@@ -3826,6 +3826,7 @@ GameObject:
   - component: {fileID: 1553907922}
   - component: {fileID: 1553907925}
   - component: {fileID: 1553907924}
+  - component: {fileID: 1553907926}
   m_Layer: 0
   m_Name: Mario
   m_TagString: Player
@@ -4111,6 +4112,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  fire:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1553907924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4170,6 +4174,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1553907926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553907915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6391791d58e0502439832420d2ded836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startState: {fileID: 0}
+  previousState: {fileID: 0}
+  currentState: {fileID: 0}
+  remainState: {fileID: 0}
+  transitionStateChanged: 0
+  stateTimeElapsed: 0
+  isActive: 1
+  gameConstants: {fileID: 0}
+  currentPowerupType: -1
+  shouldBeNextState: -1
 --- !u!1 &1634675667
 GameObject:
   m_ObjectHideFlags: 0
