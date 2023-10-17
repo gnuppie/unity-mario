@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 364277bd8e833524ea7b7b81d900ccdc, type: 3}
   m_Name: ShouldTransformToInvincibleMario
   m_EditorClassIdentifier: 
-  map: []
+  map:
+  - fromState: 1
+    powerupCollected: 99
+  - fromState: 2
+    powerupCollected: 99

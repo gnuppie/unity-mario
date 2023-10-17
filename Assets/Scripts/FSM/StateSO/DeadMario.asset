@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 364277bd8e833524ea7b7b81d900ccdc, type: 3}
-  m_Name: ShouldTransformToFireMario
+  m_Script: {fileID: 11500000, guid: 8c920a1c15ad2c54cb8b139ec0cefefb, type: 3}
+  m_Name: DeadMario
   m_EditorClassIdentifier: 
-  map:
-  - fromState: 1
-    powerupCollected: 4
+  setupActions: []
+  actions: []
+  eventTriggeredActions: []
+  exitActions: []
+  transitions: []
+  sceneGizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
