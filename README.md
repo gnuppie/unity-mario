@@ -9,7 +9,7 @@ Reference to https://natalieagus.github.io/50033/ docs
 
 Progress:
 
-15/10/23: Started Week 5 - Used Javier's Migration
+15/10/23: Week 5 - Still need to do Checkoff
 
 12/10/23: Completed Week 4
 
