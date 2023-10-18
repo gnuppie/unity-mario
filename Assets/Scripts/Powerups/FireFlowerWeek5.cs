@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StarPowerupWeek5 : BasePowerupWeek5
+public class FireFlowerWeek5 : BasePowerupWeek5
 {
     // Start is called before the first frame update
     private Vector3 ogPos;
-    private AudioSource starAudio;
+    private AudioSource fireFlowerAudio;
     protected override void Start()
     {
         base.Start(); // Call base class Start()
-        type = PowerupType.StarMan;
+        type = PowerupType.FireFlower;
         ogPos = transform.position;
-        starAudio = GetComponent<AudioSource>();
+        fireFlowerAudio = GetComponent<AudioSource>();
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -38,25 +38,19 @@ public class StarPowerupWeek5 : BasePowerupWeek5
     public override void SpawnPowerup()
     {
         base.SpawnPowerup();
-        starAudio.PlayOneShot(starAudio.clip);
+        fireFlowerAudio.PlayOneShot(fireFlowerAudio.clip);
         PlaySpawnAnimation();
         GetComponent<BoxCollider2D>().enabled = true;
-    }
-
-    public void MovePowerup()
-    {
-        rigidBody.bodyType = RigidbodyType2D.Dynamic;
-        rigidBody.AddForce(Vector2.right * 3, ForceMode2D.Impulse);
     }
 
     public override void ApplyPowerup(MonoBehaviour i)
     {
         // try
-        BuffStateController buff;
-        bool result = i.TryGetComponent<BuffStateController>(out buff);
+        MarioStateController mario;
+        bool result = i.TryGetComponent<MarioStateController>(out mario);
         if (result)
         {
-            buff.SetPowerup(powerupType);
+            mario.SetPowerup(powerupType);
         }
     }
 

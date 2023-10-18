@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b0c9057b2477a54b9d65ec866830a4d, type: 3}
-  m_Name: SetupSuperMario
+  m_Script: {fileID: 11500000, guid: f6e329c507a909c41a1bd282c36a6f55, type: 3}
+  m_Name: StartStarman
   m_EditorClassIdentifier: 
-  animatorController: {fileID: 9100000, guid: 120cec32d54de314e91ef47c43caf14c, type: 2}
+  isInvincible: {fileID: 11400000, guid: 7acaa7bf0a5fed940b28837db1f0f476, type: 2}
+  invincibleAudio: {fileID: 8300000, guid: fe80c79237cc34e99babbc6d54016d93, type: 3}

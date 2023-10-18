@@ -9,7 +9,7 @@ Reference to https://natalieagus.github.io/50033/ docs
 
 Progress:
 
-15/10/23: Week 5 - Still need to do Checkoff
+18/10/23: Completed Week 5
 
 12/10/23: Completed Week 4
 
